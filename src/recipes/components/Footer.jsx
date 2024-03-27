@@ -22,8 +22,9 @@ export const Footer = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: { xs: 4, sm: 8 },
-                py: { xs: 8, sm: 10 },
+                py: { xs: 4, sm: 6 },
                 textAlign: { sm: 'center', md: 'left' },
+                background: '#F9F6F2'
             }}
         >
             <Box
@@ -34,6 +35,7 @@ export const Footer = () => {
                     width: '100%',
                     borderTop: '1px solid',
                     borderColor: 'divider',
+                    
                 }}
             >
                 <div>

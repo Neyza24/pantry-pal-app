@@ -1,11 +1,11 @@
-import { Footer, Header } from "./recipes/components"
+
+import { IngredientsPage } from "./recipes/pages"
 
 export const PantryApp = () => {
 
   return (
     <>
-      <Header/>
-      <Footer />
+      <IngredientsPage />
     </>
   )
 }
