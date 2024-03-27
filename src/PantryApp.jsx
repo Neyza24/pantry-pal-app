@@ -1,9 +1,10 @@
+import { Header } from "./recipes/components"
 
 export const PantryApp = () => {
 
   return (
     <>
-      <h1>PantryPal app</h1>
+      <Header/>
     </>
   )
 }
