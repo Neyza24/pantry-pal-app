@@ -24,7 +24,6 @@ export const Footer = () => {
                 gap: { xs: 4, sm: 8 },
                 py: { xs: 4, sm: 6 },
                 textAlign: { sm: 'center', md: 'left' },
-                background: '#F9F6F2'
             }}
         >
             <Box
