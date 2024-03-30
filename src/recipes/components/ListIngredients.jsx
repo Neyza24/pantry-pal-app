@@ -1,5 +1,6 @@
 import { Grid,  } from '@mui/material'
 import { IngredientCard } from './IngredientCard'
+import { ingredients } from '../../mock/ingredients'
 
 export const ListIngredients = () => {
     return (
@@ -20,24 +21,17 @@ export const ListIngredients = () => {
 
             </Grid> */}
             <Grid item xs={12} sm={8} sx={{ display: 'flex', gap: { xs: '1rem' }, flexWrap: 'wrap', justifyContent: { xs: 'space-between', sm: 'start' } }}>
-                <Grid item xs={5} sm={3} md={2.5}>
-                    <IngredientCard />
-                </Grid>
-                <Grid item xs={5} sm={3} md={2.5}>
-                    <IngredientCard />
-                </Grid>
-                <Grid item xs={5} sm={3} md={2.5}>
-                    <IngredientCard />
-                </Grid>
-                <Grid item xs={5} sm={3} md={2.5}>
-                    <IngredientCard />
-                </Grid>
-                <Grid item xs={5} sm={3} md={2.5}>
-                    <IngredientCard />
-                </Grid>
-                <Grid item xs={5} sm={3} md={2.5}>
-                    <IngredientCard />
-                </Grid>
+                
+                    {
+                        ingredients?.map( ingredient => (
+                            
+                                <IngredientCard  ingredient={ingredient} key={ingredient.name}/>
+                            
+                        ))
+                    }
+                    
+                
+
             </Grid>
         </>
 
@@ -45,4 +39,4 @@ export const ListIngredients = () => {
     )
 }
 
-// sx={{display: 'flex', gap: '1rem', flexWrap: 'wrap'}}
+/* eslint react/prop-types: 0 */

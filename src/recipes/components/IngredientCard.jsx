@@ -1,28 +1,32 @@
-import {  Card, CardActionArea, CardContent, CardMedia,  Typography } from "@mui/material"
+import { Grid, Card, CardActionArea, CardContent, CardMedia,  Typography } from "@mui/material"
 
-const urlImg = 'https://source.unsplash.com/random?wallpapers'
-export const IngredientCard = () => {
+
+export const IngredientCard = ({ingredient}) => {
     return (
-        
+        <Grid item xs={5} sm={3} md={2.5}>
             <CardActionArea component="a" href="#">
                 <Card sx={{ display: 'flex', flexDirection: 'column', gap: '2px',  justifySelf: 'stretch' }}>
                     <CardMedia
                         component="img"
                         
-                        image={urlImg}
+                        image={ingredient.imageUrl}
                         alt=''
+                        sx={{aspectRatio: '16/9' }}
                     />
                     <CardContent sx={{ flex: 1 }}>
                         <Typography variant="h6">
-                            ingredient
+                            {ingredient.name}
                         </Typography>
                         <Typography variant="subtitle2" color="text.secondary">
-                            Select...
+                            {ingredient.category}
                         </Typography>
                     </CardContent>
                 </Card>
             </CardActionArea>
+        </Grid>
+            
         
     )
 }
 
+/* eslint react/prop-types: 0 */

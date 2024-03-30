@@ -1,7 +1,8 @@
 import { Button, CardMedia, Grid, Typography } from '@mui/material';
 
-import img from '../../assets/illutrate.png'
 
+
+import illustration from '../../assets/illutrate.png';
 
 export const IngredientsSelected = () => {
     return (
@@ -12,7 +13,7 @@ export const IngredientsSelected = () => {
             <CardMedia
                         component="img"
                         
-                        image={img}
+                        image={illustration}
                         alt=''
                     />
             <Typography variant="h6" sx={{ mt: 1 }}>
