@@ -4,13 +4,14 @@ import { Footer, Header } from "../components"
 export const AppLayout = ({children}) => {
     return (
         <>
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{backgroundColor: '#fff'}}>
                 <Header />
                 <main >
                     {children}
                 </main>
+                <Footer />
             </Container>
-            <Footer />
+            
         </>
     )
 }

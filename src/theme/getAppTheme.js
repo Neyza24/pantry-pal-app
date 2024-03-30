@@ -7,7 +7,7 @@ export const brand = {
   200: '#2f3e47',
   300: '#29b16e',
   400: '#29b16e',
-  500: '#353535',
+  500: '#0F172A',
   600: '#29b16e',
   700: '#29b16e',
   800: '#29b16e',
@@ -58,9 +58,9 @@ const getDesignTokens = (mode) => ({
     mode,
     primary: {
       light: brand[200],
-      main: '#356869',
+      main: '#272D2F',
       dark: brand[800],
-      contrastText: '#b9e4c9',
+      contrastText: '#fff',
       ...(mode === 'dark' && {
         contrastText: brand[100],
         light: brand[300],
@@ -113,12 +113,12 @@ const getDesignTokens = (mode) => ({
     },
     divider: mode === 'dark' ? alpha(gray[600], 0.3) : alpha(gray[300], 0.5),
     background: {
-      default: '#faffe6',
+      default: '#fff',
       ...(mode === 'dark' && { default: gray[900], paper: gray[800] }),
     },
     text: {
-      primary: gray[800],
-      secondary: '#356869',
+      primary: '#0F172A',
+      secondary: '#475569',
       ...(mode === 'dark' && { primary: '#fff', secondary: gray[400] }),
     },
     action: {
@@ -162,6 +162,7 @@ const getDesignTokens = (mode) => ({
     },
     subtitle2: {
       fontSize: 16,
+      fontWeight: 400,
     },
     body1: {
       fontWeight: 400,
@@ -186,7 +187,7 @@ export function getAppTheme(mode) {
         styleOverrides: {
           root: ({ theme, ownerState }) => ({
             backgroundColor: gray[50],
-            borderRadius: 10,
+            borderRadius: 4,
             outline: `1px solid ${alpha(gray[200], 0.8)}`,
             boxShadow: 'none',
             transition: 'background-color, border, 80ms ease',
@@ -194,8 +195,8 @@ export function getAppTheme(mode) {
               boxSizing: 'border-box',
               background: `linear-gradient(to bottom, #FFF, ${gray[50]})`,
               '&:hover': {
-                borderColor: brand[300],
-                boxShadow: `0 0 24px ${brand[100]}`,
+                borderColor: gray[300],
+                boxShadow: `0 0 24px ${gray[100]}`,
               },
             }),
             ...(theme.palette.mode === 'dark' && {

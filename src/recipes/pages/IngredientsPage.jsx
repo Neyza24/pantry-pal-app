@@ -8,22 +8,17 @@ export const IngredientsPage = () => {
     return (
         <AppLayout>
 
-
-            <Typography variant="h1" sx={{ fontSize: '2rem', py: '1.5rem' }}>
-                WHAT IS IN YOUR FRIDGE?
+            <Grid container sx={{ display: 'flex', flexDirection: 'column', mt: 3, px: {xs: 0, md: '2rem'} }}>
+            <Typography variant="h2" sx={{ fontSize: '2rem', py: '1.5rem' }} color="text.primary">
+                What is in your fridge?
             </Typography>
-
-            <Grid>
                 <SearchBar />
             </Grid>
 
-
-            <Grid container spacing={5} sx={{ mt: 3 }}>
+            <Grid container spacing={2} sx={{ mt: 6, px: {xs: 0, md: '2rem'}, gap: {xs: '1rem', sm: 0}}}>
                 <ListIngredients />
                 <IngredientsSelected />
             </Grid>
-
-
         </AppLayout>
     )
 }

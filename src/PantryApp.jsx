@@ -7,6 +7,7 @@ export const PantryApp = () => {
   return (
     <AppTheme>
       <IngredientsPage />
+      {/* <MainPage /> */}
     </AppTheme>
   )
 }
