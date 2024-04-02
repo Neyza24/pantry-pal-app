@@ -5,3 +5,13 @@ export const categories = [
     'spicies',
     'lacteos'
 ]
+
+
+export const categoriasComunes = [
+    "Grains",
+    "Meats",
+    "Seafood",
+    "Vegetables",
+    "Eggs and Dairy"
+];
+

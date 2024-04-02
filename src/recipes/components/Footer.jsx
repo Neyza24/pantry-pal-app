@@ -38,7 +38,6 @@ export const Footer = () => {
                 }}
             >
                 <div>
-
                     <Copyright />
                 </div>
                 <Stack

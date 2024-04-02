@@ -4,7 +4,7 @@ import { Footer, Header } from "../components"
 export const AppLayout = ({children}) => {
     return (
         <>
-            <Container maxWidth="lg" sx={{backgroundColor: '#fff'}}>
+            <Container maxWidth="lg" sx={{backgroundColor: '#FAFFE6'}}>
                 <Header />
                 <main >
                     {children}

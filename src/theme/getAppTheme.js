@@ -58,9 +58,9 @@ const getDesignTokens = (mode) => ({
     mode,
     primary: {
       light: brand[200],
-      main: '#272D2F',
+      main: '#FFD850',
       dark: brand[800],
-      contrastText: '#fff',
+      contrastText: '#333333',
       ...(mode === 'dark' && {
         contrastText: brand[100],
         light: brand[300],
@@ -129,33 +129,40 @@ const getDesignTokens = (mode) => ({
     },
   },
   typography: {
-    fontFamily: ['"Roboto", "sans-serif"'].join(','),
+    fontFamily: ['"Raleway", "Roboto", "sans-serif"'].join(','),
     h1: {
       fontSize: 60,
       fontWeight: 600,
       lineHeight: 78 / 70,
       letterSpacing: -0.2,
+      color: '#2b3445'
     },
     h2: {
       fontSize: 48,
       fontWeight: 600,
       lineHeight: 1.2,
+      color: '#2b3445'
     },
     h3: {
       fontSize: 42,
       lineHeight: 1.2,
+      color: '#2b3445'
     },
     h4: {
       fontSize: 36,
       fontWeight: 500,
       lineHeight: 1.5,
+      color: '#2b3445'
     },
     h5: {
       fontSize: 20,
       fontWeight: 600,
+      color: '#2b3445'
     },
     h6: {
-      fontSize: 18,
+      fontSize: 20,
+      fontWeight: 600,
+      color: '#2b3445'
     },
     subtitle1: {
       fontSize: 18,
@@ -163,6 +170,7 @@ const getDesignTokens = (mode) => ({
     subtitle2: {
       fontSize: 16,
       fontWeight: 400,
+      color: '#191D21'
     },
     body1: {
       fontWeight: 400,
@@ -183,40 +191,7 @@ export function getAppTheme(mode) {
   return {
     ...getDesignTokens(mode),
     components: {
-      MuiCard: {
-        styleOverrides: {
-          root: ({ theme, ownerState }) => ({
-            backgroundColor: gray[50],
-            borderRadius: 4,
-            outline: `1px solid ${alpha(gray[200], 0.8)}`,
-            boxShadow: 'none',
-            transition: 'background-color, border, 80ms ease',
-            ...(ownerState.variant === 'outlined' && {
-              boxSizing: 'border-box',
-              background: `linear-gradient(to bottom, #FFF, ${gray[50]})`,
-              '&:hover': {
-                borderColor: gray[300],
-                boxShadow: `0 0 24px ${gray[100]}`,
-              },
-            }),
-            ...(theme.palette.mode === 'dark' && {
-              backgroundColor: alpha(gray[800], 0.6),
-              outline: `1px solid ${alpha(gray[700], 0.3)}`,
-              ...(ownerState.variant === 'outlined' && {
-                boxSizing: 'border-box',
-                background: `linear-gradient(to bottom, ${gray[900]}, ${alpha(
-                  gray[800],
-                  0.5,
-                )})`,
-                '&:hover': {
-                  borderColor: brand[700],
-                  boxShadow: `0 0 24px ${brand[800]}`,
-                },
-              }),
-            }),
-          }),
-        },
-      },
+      
     },
   };
 }

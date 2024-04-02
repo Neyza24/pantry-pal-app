@@ -5,19 +5,19 @@ export const IngredientCard = ({ingredient}) => {
     return (
         <Grid item xs={5} sm={3} md={2.5}>
             <CardActionArea component="a" href="#">
-                <Card sx={{ display: 'flex', flexDirection: 'column', gap: '2px',  justifySelf: 'stretch' }}>
+                <Card elevation={3} sx={{ display: 'flex', flexDirection: 'column', gap: '2px',  justifySelf: 'stretch', alignItems: 'center' }}>
                     <CardMedia
                         component="img"
-                        
-                        image={ingredient.imageUrl}
+                        sx={{  objectFit: 'contain', aspectRatio: '1/1', maxWidth: {xs:'100px'} }}
+                        image={ingredient.image}
                         alt=''
-                        sx={{aspectRatio: '16/9' }}
+                        
                     />
                     <CardContent sx={{ flex: 1 }}>
-                        <Typography variant="h6">
+                        <Typography variant="h6" component="div">
                             {ingredient.name}
                         </Typography>
-                        <Typography variant="subtitle2" color="text.secondary">
+                        <Typography variant="subtitle2">
                             {ingredient.category}
                         </Typography>
                     </CardContent>

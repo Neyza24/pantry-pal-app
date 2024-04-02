@@ -1,26 +1,26 @@
 
 import SearchIcon from '@mui/icons-material/Search';
-import { IconButton, InputBase, Paper } from '@mui/material';
+import { Button, InputBase, Paper } from '@mui/material';
 
 
 export const SearchBar = () => {
 
-
     return (
         <Paper
             component="form"
-            elevation={1}
-            sx={{ display: "flex", alignItems: "center", px: 1, py: 0.5 }}
+
+            sx={{ maxWidth: '720px', display: "flex", alignItems: "center", height: '48px', pl: '12px', py: 0, boxShadow: '0px 4px 16px rgba(43, 52, 69, 0.1)', borderRadius: '0.5rem' }}
         >
+            <SearchIcon />
+
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
-                placeholder="Search your favorite ingredients"
+                placeholder="Search your ingredients"
                 inputProps={{ 'aria-label': 'search' }}
-                
+
             />
-            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                <SearchIcon />
-            </IconButton>
+
+            <Button variant='contianed' sx={{ background: '#FFD850', borderRadius: '0 8px 8px 0', height: '48px' }} aria-label="search">Search</Button>
         </Paper>
     );
 
