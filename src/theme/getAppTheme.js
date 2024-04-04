@@ -149,7 +149,7 @@ const getDesignTokens = (mode) => ({
       color: '#2b3445'
     },
     h4: {
-      fontSize: 36,
+      fontSize: 32,
       fontWeight: 500,
       lineHeight: 1.5,
       color: '#2b3445'
@@ -191,7 +191,7 @@ export function getAppTheme(mode) {
   return {
     ...getDesignTokens(mode),
     components: {
-      
+
     },
   };
 }

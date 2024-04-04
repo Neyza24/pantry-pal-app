@@ -12,13 +12,8 @@ export const AppTheme = ({ children }) => {
 
     const appTheme = createTheme(getAppTheme(mode));
 
-    // const toggleColorMode = () => {
-    //     setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
-    //   };
-
     return (
         <ThemeProvider theme={appTheme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
 
             {children}

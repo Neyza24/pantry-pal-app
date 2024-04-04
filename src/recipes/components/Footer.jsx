@@ -34,7 +34,7 @@ export const Footer = () => {
                     width: '100%',
                     borderTop: '1px solid',
                     borderColor: 'divider',
-                    
+
                 }}
             >
                 <div>

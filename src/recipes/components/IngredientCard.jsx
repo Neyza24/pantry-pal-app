@@ -8,7 +8,7 @@ export const IngredientCard = ({ingredient}) => {
                 <Card elevation={3} sx={{ display: 'flex', flexDirection: 'column', gap: '2px',  justifySelf: 'stretch', alignItems: 'center' }}>
                     <CardMedia
                         component="img"
-                        sx={{  objectFit: 'contain', aspectRatio: '1/1', maxWidth: {xs:'100px'} }}
+                        sx={{  objectFit: 'contain', aspectRatio: '1/1', maxWidth: {xs:'100px'}, paddingTop: '16px' }}
                         image={ingredient.image}
                         alt=''
                         

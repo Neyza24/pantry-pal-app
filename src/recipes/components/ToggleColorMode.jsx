@@ -3,7 +3,6 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 
 export const ToggleColorMode = () => {
-
     return (
         <Box sx={{ maxWidth: '32px' }}>
             <Button

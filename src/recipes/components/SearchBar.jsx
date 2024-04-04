@@ -8,8 +8,7 @@ export const SearchBar = () => {
     return (
         <Paper
             component="form"
-
-            sx={{ maxWidth: '720px', display: "flex", alignItems: "center", height: '48px', pl: '12px', py: 0, boxShadow: '0px 4px 16px rgba(43, 52, 69, 0.1)', borderRadius: '0.5rem' }}
+            sx={{ maxWidth: '720px', display: "flex", alignItems: "center", height: '48px', pl: '12px', py: 0, boxShadow: '0px 4px 16px rgba(43, 52, 69, 0.1)', borderRadius: '0.5rem', margin: 'auto' }}
         >
             <SearchIcon />
 

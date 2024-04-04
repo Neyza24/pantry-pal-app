@@ -1,0 +1,9 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M59.1673 36.252H22.7134V91.6666H59.1673V36.252Z" fill="#36A9E1" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M77.466 36.252H59.1665V91.6666H77.466V36.252Z" fill="#AAE3F9" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M59.1673 54.7214H22.7134V73.193H59.1673V54.7214Z" fill="white" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M77.5001 36.2521H59.1665L66.8218 19.1194H67.3228L77.5001 36.2521Z" fill="#AAE3F9" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M66.8225 19.1194L59.1671 36.2521H22.5L34.6257 19.1194H66.8225Z" fill="#36A9E1" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+<path d="M67.1058 18.4843L66.8223 19.1193" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M64.2921 8.33337H37.4419C35.8878 8.33337 34.6279 9.56398 34.6279 11.0819V19.1194H67.1082V11.0819C67.1061 9.56398 65.8462 8.33337 64.2921 8.33337Z" fill="#DEF7FF" stroke="#1D1D1B" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="bevel"/>
+</svg>
