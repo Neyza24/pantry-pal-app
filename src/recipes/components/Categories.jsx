@@ -4,7 +4,7 @@ import { categories } from "../../mock/categories"
 
 
 export const Categories = () => {
-
+    
     return (
         <div className="chipContainer" >
             {

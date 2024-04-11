@@ -1,10 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
 import { PantryApp } from './PantryApp.jsx'
+import { store } from './store'
 import './index.css'
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <PantryApp />
+    <Provider store={store}>
+      <PantryApp />
+    </Provider>
   </React.StrictMode>,
 )

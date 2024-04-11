@@ -3,6 +3,11 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    
+}
+
+body {
+    background-color: #FAFFE6;
 }
 
 
@@ -19,12 +24,16 @@
 }
 
 .navbar {
-    background-color: #FAFFE6;
+    background-color: #fff;
 }
 
 .navbar-active {
     background-color: #fff;
+}
+
+/* .navbar-active {
+    background-color: #fff;
     border-bottom: 1px solid #978D9E;
     transition:  background-color 150ms ease-in-out 0s, border-bottom-color 150ms ease-in-out 0s
-}
+} */
 

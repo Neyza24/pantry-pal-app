@@ -1,4 +1,4 @@
-import { Box, Container, IconButton, Link, Stack, Typography } from "@mui/material";
+import { Box, IconButton, Link, Stack, Typography } from "@mui/material";
 
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -16,7 +16,7 @@ function Copyright() {
 
 export const Footer = () => {
     return (
-        <Container
+        <Box
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -67,6 +67,6 @@ export const Footer = () => {
                     </IconButton>
                 </Stack>
             </Box>
-        </Container>
+        </Box>
     )
 }

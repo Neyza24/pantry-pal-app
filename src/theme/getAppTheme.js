@@ -2,16 +2,16 @@ import { alpha } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 export const brand = {
-  50: '#2f3e47',
-  100: '#2f3e47',
-  200: '#2f3e47',
-  300: '#29b16e',
-  400: '#29b16e',
-  500: '#0F172A',
-  600: '#29b16e',
-  700: '#29b16e',
-  800: '#29b16e',
-  900: '#29b16e',
+  50: '#FFD85075',
+  100: '#FFD85080',
+  200: '#FFD85085',
+  300: '#FFD85090',
+  400: '#FFD85095',
+  500: '#FFD850',
+  600: '#FFD850',
+  700: '#FFD850',
+  800: '#FFD850',
+  900: '#FFD850',
 };
 
 export const secondary = {
@@ -58,7 +58,7 @@ const getDesignTokens = (mode) => ({
     mode,
     primary: {
       light: brand[200],
-      main: '#FFD850',
+      main: brand[500],
       dark: brand[800],
       contrastText: '#333333',
       ...(mode === 'dark' && {
@@ -191,7 +191,100 @@ export function getAppTheme(mode) {
   return {
     ...getDesignTokens(mode),
     components: {
-
+      MuiButtonBase: {
+        defaultProps: {
+          disableTouchRipple: true,
+          disableRipple: true,
+        },
+        styleOverrides: {
+          root: {
+            boxSizing: 'border-box',
+            transition: 'all 100ms ease-in',
+            '&:focus-visible': {
+              outline: `3px solid ${alpha(brand[500], 0.5)}`,
+              outlineOffset: '2px',
+            },
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: ({ theme, ownerState }) => ({
+            boxShadow: 'none',
+            borderRadius: '12px',
+            textTransform: 'uppercase',
+           
+            ...(ownerState.size === 'small' && {
+              maxHeight: '32px',
+            }),
+            ...(ownerState.size === 'medium' && {
+              height: '40px',
+            }),
+            ...(ownerState.variant === 'contained' &&
+              ownerState.color === 'primary' && {
+                color: '#000',
+                whiteSpace: 'nowrap',
+                backgroundColor: '#FFD850',
+                backgroundImage: `linear-gradient(to bottom, ${brand[400]}, ${brand[500]})`,
+                boxShadow: `inset 0 1px ${alpha(
+                  brand[300],
+                  0.5,
+                )}, inset 0 -2px ${alpha(brand[700], 0.5)}`,
+                border: `1px solid ${brand[500]}`,
+                '&:hover': {
+                  backgroundColor: brand[400],
+                  backgroundImage: 'none',
+                  boxShadow: `0 0 0 1px  ${alpha(brand[300], 0.5)}`,
+                },
+              }),
+            ...(ownerState.variant === 'outlined' && {
+              backgroundColor: alpha(brand[300], 0.1),
+              borderColor: brand[300],
+              color: brand[500],
+              '&:hover': {
+                backgroundColor: alpha(brand[300], 0.3),
+                borderColor: brand[200],
+              },
+            }),
+            ...(ownerState.variant === 'text' && {
+              color: brand[500],
+              '&:hover': {
+                backgroundColor: alpha(brand[300], 0.3),
+                borderColor: brand[200],
+              },
+            }),
+            ...(theme.palette.mode === 'dark' && {
+              ...(ownerState.variant === 'contained' &&
+                ownerState.color === 'primary' && {
+                  border: `1px solid ${brand[600]}`,
+                  backgroundImage: 'none',
+                  backgroundColor: brand[500],
+                  '&:hover': {
+                    background: brand[600],
+                    backgroundImage: 'none',
+                    boxShadow: `0 0 0 1px  ${alpha(brand[700], 0.5)}`,
+                  },
+                }),
+              ...(ownerState.variant === 'outlined' && {
+                backgroundColor: alpha(brand[600], 0.1),
+                borderColor: brand[700],
+                color: brand[300],
+                '&:hover': {
+                  backgroundColor: alpha(brand[600], 0.3),
+                  borderColor: brand[700],
+                },
+              }),
+              ...(ownerState.variant === 'text' && {
+                color: brand[300],
+                '&:hover': {
+                  backgroundColor: alpha(brand[600], 0.3),
+                  borderColor: brand[700],
+                },
+              }),
+            }),
+          }),
+        },
+      }
     },
   };
 }

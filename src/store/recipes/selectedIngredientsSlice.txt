@@ -1,0 +1,28 @@
+import { createSlice } from '@reduxjs/toolkit';
+// import { selectSearchTerm } from './searchTerm';
+
+export const selectedIngredientsSlice = createSlice({
+    name: 'selectedIngredients',
+    initialState: [],
+    reducers: {
+        addIngredient: (state, action) => {
+            state.push(action.payload);
+        },
+        removeIngredient: (state, action) => {
+            return state.filter(recipe => recipe.id !== action.payload.id)
+        },
+    }
+});
+
+
+
+// export const selectedIngredients = state => state.selectedIngredients;
+
+// export const selectUserIngredients = (state) => {
+//     const selectIngredients = selectedIngredients(state);
+//     const searchTerm = selectSearchTerm(state);
+
+//     return selectIngredients.filter((ingredient) => ingredient.name.toLowerCase().includes(searchTerm.toLowerCase()))
+// }
+
+export const { addIngredient, removeIngredient } = selectedIngredientsSlice.actions;

@@ -1,19 +1,43 @@
-import { Grid, } from '@mui/material'
-import { IngredientCard } from './IngredientCard'
-import { ingredients } from '../../mock/ingredients'
+import { useSelector} from 'react-redux';
+import { Box } from '@mui/material'
+import { IngredientCard } from './IngredientCard';
+
+
+import { selectFilteredAllIngredients } from '../../store/recipes/allIngredientsSlice';
+
+
 
 export const ListIngredients = () => {
+    const allIngredients = useSelector(selectFilteredAllIngredients);
+    const ingredientselected = useSelector(state => state.selectedIngredients);
+
+    const checkIngredientInList = ingredient1 => {
+        return ingredientselected.some(item => item.id === ingredient1.id);
+    }
+
+    
     return (
-        <>
-            <Grid item xs={12} sm={8} sx={{ display: 'flex', gap: { xs: '1rem' }, flexWrap: 'wrap', justifyContent: { xs: 'space-between', sm: 'start' } }}>
+            <Box  
+                    sx={{ 
+                        display: 'flex', 
+                        gap: { xs: '1rem' }, 
+                        flexWrap: 'wrap', 
+                        justifyContent: { xs: 'space-around', sm: 'start', }, 
+                        flexBasis: '70%' }}>
 
                 {
-                    ingredients?.map(ingredient => (
-                        <IngredientCard ingredient={ingredient} key={ingredient.name} />
-                    ))
+                    allIngredients?.map(ingredient => {
+                        const isIngredientInList = checkIngredientInList(ingredient);
+                        
+                        return (
+                            <IngredientCard ingredient={ingredient} key={ingredient.id} isIngredientInList={isIngredientInList}/>
+                        )
+                        
+                    }
+                    )
                 }
-            </Grid>
-        </>
+            </Box>
+        
     )
 }
 

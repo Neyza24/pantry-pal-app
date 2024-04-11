@@ -22,103 +22,123 @@ import mushroom from '../assets/mushroom.svg';
 
 
 
-export const ingredients = [
+export const dataIngredients = [
     {
+        id: 1,
         name: "Rice",
         image: rice,
         category: "Grains"
     },
     {
+        id: 2,
         name: "Pasta",
         image: pasta,
         category: "Grains"
     },
     {
+        id: 3,
         name: "Beans",
         image: beans,
         category: "Grains"
     },
     {
-        name: "Potatoe",
+        id: 4,
+        name: "Potatoes",
         image: potatoe,
         category: "Vegetables"
     },
     {
+        id: 5,
         name: "Chicken",
         image: chicken,
         category: "Meats"
     },
     {
+        id: 6,
         name: "Beef",
         image: beef,
         category: "Meats"
     },
     {
+        id: 7,
         name: "Fish",
         image: fish,
         category: "Seafood"
     },
     {
+        id: 8,
         name: "Shrimp",
         image: shrimp,
         category: "Seafood"
     },
     {
+        id: 9,
         name: "Mushroom",
         image: mushroom,
         category: "Vegetables"
     },
     {
+        id: 10,
         name: "Onion",
         image: onion,
         category: "Vegetables"
     },
     {
+        id: 11,
         name: "Tomato",
         image: tomato,
         category: "Vegetables"
     },
     {
+        id: 12,
         name: "Spinach",
         image: spinach,
         category: "Vegetables"
     },
     {
+        id: 13,
         name: "Broccoli",
         image: broccoli,
         category: "Vegetables"
     },
     {
+        id: 14,
         name: "Avocado",
         image: avocado,
         category: "Vegetables"
     },
     {
+        id: 15,
         name: "Corn",
         image: corn,
         category: "Vegetables"
     },
     {
+        id: 16,
         name: "Egg",
         image: eggs,
         category: "Eggs / Dairy"
     },
     {
+        id: 17,
         name: "Cheese",
         image: cheese,
         category: "Eggs / Dairy"
     },
     {
+        id: 18,
         name: "Milk",
         image: milk,
         category: "Eggs / Dairy"
     },
     {
+        id: 19,
         name: "Butter",
         image: butter,
         category: "Eggs / Dairy"
     },
     {
+        id: 20,
         name: "Bacon",
         image: bacon,
         category: "Meats"

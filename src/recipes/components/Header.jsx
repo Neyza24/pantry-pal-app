@@ -1,4 +1,4 @@
-import { Box, Container, Toolbar, Typography } from "@mui/material"
+import { Box, Toolbar, Typography } from "@mui/material"
 import { ToggleColorMode } from "./ToggleColorMode";
 import { useEffect, useState } from "react";
 
@@ -20,7 +20,7 @@ export const Header = () => {
     })
 
     return (
-        < Container className={colorChange ? 'navbar-active' : 'navbar'} sx={{ position: 'sticky', top: '0px', zIndex: 20, }}>
+        < Box className={colorChange ? 'navbar-active' : 'navbar'} sx={{ position: 'sticky', top: '0px', zIndex: 20, }}>
             <Toolbar sx={{ width: '100%', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} >
                 <Typography
                     variant="h6"
@@ -42,7 +42,7 @@ export const Header = () => {
                     <ToggleColorMode sx={{ color: '#000' }} />
                 </Box>
             </Toolbar>
-        </Container>
+        </Box>
     )
 }
 

@@ -1,11 +1,32 @@
-import { Grid, Card, CardActionArea, CardContent, CardMedia,  Typography } from "@mui/material"
+import { Box, Card, CardActionArea, CardContent, CardMedia,  Typography } from "@mui/material"
+import { useDispatch} from 'react-redux';
+import { addIngredient, removeIngredient } from "../../store/ingredients/selectedIngredients";
+import { useState } from "react";
 
 
-export const IngredientCard = ({ingredient}) => {
+export const IngredientCard = ({isIngredientInList, ingredient}) => {
+
+    const [ isSelected, setIsSelected] = useState(false);
+
+    const dispatch = useDispatch();
+
+    const onAddSelectedIngredient = () => {
+
+        dispatch(addIngredient(ingredient));
+        setIsSelected(true);
+        
+    };
+
+
+    const onRemoveSelectedIngredient = () => {
+        dispatch(removeIngredient(ingredient));
+        setIsSelected(false);
+    }
+
     return (
-        <Grid item xs={5} sm={3} md={2.5}>
-            <CardActionArea component="a" href="#">
-                <Card elevation={3} sx={{ display: 'flex', flexDirection: 'column', gap: '2px',  justifySelf: 'stretch', alignItems: 'center' }}>
+        <Box sx={{width: {xs: '140px', sm: '140px', md: '148px'}}}  >
+            <CardActionArea component="a" href="#"  >
+                <Card elevation={3} sx={[{ display: 'flex', flexDirection: 'column', gap: '2px',  justifySelf: 'stretch', alignItems: 'center', textAlign: 'center', }, isSelected && {background : '#E8EEF3'}]} >
                     <CardMedia
                         component="img"
                         sx={{  objectFit: 'contain', aspectRatio: '1/1', maxWidth: {xs:'100px'}, paddingTop: '16px' }}
@@ -14,16 +35,18 @@ export const IngredientCard = ({ingredient}) => {
                         
                     />
                     <CardContent sx={{ flex: 1 }}>
-                        <Typography variant="h6" component="div">
+                        <Typography variant="h6" sx={{fontZise: {xs: '18px', sm: '20px'}}}>
                             {ingredient.name}
                         </Typography>
-                        <Typography variant="subtitle2">
+                        <Typography variant="subtitle2" sx={{fontZise: {xs: '14px', sm: '16px'}}}>
                             {ingredient.category}
                         </Typography>
                     </CardContent>
                 </Card>
+                <button onClick={() => {isIngredientInList ? onRemoveSelectedIngredient(ingredient) : onAddSelectedIngredient(ingredient) } }>{isIngredientInList ? 'remove' : 'add'}</button>
+
             </CardActionArea>
-        </Grid>
+        </Box>
             
         
     )
