@@ -9,13 +9,16 @@ import { selectFilteredAllIngredients } from '../../store/recipes/allIngredients
 
 export const ListIngredients = () => {
     const allIngredients = useSelector(selectFilteredAllIngredients);
-    const ingredientselected = useSelector(state => state.selectedIngredients);
 
-    const checkIngredientInList = ingredient1 => {
-        return ingredientselected.some(item => item.id === ingredient1.id);
+
+    const ingredientselected = useSelector(state => state.selectedIngredients);
+    console.log(ingredientselected);
+
+
+    const checkIngredientInList = ingredient => {
+        return ingredientselected.some(item => item.id === ingredient.id);
     }
 
-    
     return (
             <Box  
                     sx={{ 

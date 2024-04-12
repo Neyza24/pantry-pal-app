@@ -4,8 +4,8 @@ export const categories = [
     'Eggs and Dairy',
     'Grains',
     'Meats',
-    "Seafood",
-    "Vegetables"
+    'Seafood',
+    'Vegetables'
 ];
 
 

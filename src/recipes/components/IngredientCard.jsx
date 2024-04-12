@@ -9,23 +9,22 @@ export const IngredientCard = ({isIngredientInList, ingredient}) => {
     const [ isSelected, setIsSelected] = useState(false);
 
     const dispatch = useDispatch();
-
     const onAddSelectedIngredient = () => {
-
         dispatch(addIngredient(ingredient));
         setIsSelected(true);
-        
     };
 
 
     const onRemoveSelectedIngredient = () => {
         dispatch(removeIngredient(ingredient));
         setIsSelected(false);
+        
     }
+    
 
     return (
         <Box sx={{width: {xs: '140px', sm: '140px', md: '148px'}}}  >
-            <CardActionArea component="a" href="#"  >
+            <CardActionArea onClick={isIngredientInList ? onRemoveSelectedIngredient : onAddSelectedIngredient }   >
                 <Card elevation={3} sx={[{ display: 'flex', flexDirection: 'column', gap: '2px',  justifySelf: 'stretch', alignItems: 'center', textAlign: 'center', }, isSelected && {background : '#E8EEF3'}]} >
                     <CardMedia
                         component="img"
@@ -43,8 +42,6 @@ export const IngredientCard = ({isIngredientInList, ingredient}) => {
                         </Typography>
                     </CardContent>
                 </Card>
-                <button onClick={() => {isIngredientInList ? onRemoveSelectedIngredient(ingredient) : onAddSelectedIngredient(ingredient) } }>{isIngredientInList ? 'remove' : 'add'}</button>
-
             </CardActionArea>
         </Box>
             

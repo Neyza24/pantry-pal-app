@@ -13,7 +13,7 @@ export const allIngredientsSlice = createSlice({
     }
 });
 
-// export const { ingredientsByCategory } = allIngredientsSlice.actions;
+export const { ingredientsByCategory } = allIngredientsSlice.actions;
 export const selectedIngredients = state => state.allIngredients;
 
 
@@ -23,3 +23,17 @@ export const selectFilteredAllIngredients = (state) => {
 
     return allIngredients?.filter((ingredient) => ingredient.name.toLowerCase().includes(searchTerm.toLowerCase()))
 }
+
+// const selectedCategory = useSelector(state => state.category);
+    // const searchValue = useSelector(state => state.searchTerm);
+
+    // const ingredients = useSelector(state => {
+    //     const initialData = state.allIngredients
+    //     const filterByCategory = initialData.filter(ingredient =>
+    //         ingredient.category === selectedCategory && 
+    //         ingredient.name.toLowerCase().includes(searchValue.toLowerCase()))
+
+    //         return filterByCategory
+    // }
+    
+    // )

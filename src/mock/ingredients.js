@@ -27,121 +27,141 @@ export const dataIngredients = [
         id: 1,
         name: "Rice",
         image: rice,
-        category: "Grains"
+        category: "Grains",
+        isSelected: false
     },
     {
         id: 2,
         name: "Pasta",
         image: pasta,
-        category: "Grains"
+        category: "Grains",
+        isSelected: false
     },
     {
         id: 3,
         name: "Beans",
         image: beans,
-        category: "Grains"
+        category: "Grains",
+        isSelected: false
     },
     {
         id: 4,
         name: "Potatoes",
         image: potatoe,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 5,
         name: "Chicken",
         image: chicken,
-        category: "Meats"
+        category: "Meats",
+        isSelected: false
     },
     {
         id: 6,
         name: "Beef",
         image: beef,
-        category: "Meats"
+        category: "Meats",
+        isSelected: false
     },
     {
         id: 7,
         name: "Fish",
         image: fish,
-        category: "Seafood"
+        category: "Seafood",
+        isSelected: false
     },
     {
         id: 8,
         name: "Shrimp",
         image: shrimp,
-        category: "Seafood"
+        category: "Seafood",
+        isSelected: false
     },
     {
         id: 9,
         name: "Mushroom",
         image: mushroom,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 10,
         name: "Onion",
         image: onion,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 11,
         name: "Tomato",
         image: tomato,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 12,
         name: "Spinach",
         image: spinach,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 13,
         name: "Broccoli",
         image: broccoli,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 14,
         name: "Avocado",
         image: avocado,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 15,
         name: "Corn",
         image: corn,
-        category: "Vegetables"
+        category: "Vegetables",
+        isSelected: false
     },
     {
         id: 16,
         name: "Egg",
         image: eggs,
-        category: "Eggs / Dairy"
+        category: "Eggs / Dairy",
+        isSelected: false
     },
     {
         id: 17,
         name: "Cheese",
         image: cheese,
-        category: "Eggs / Dairy"
+        category: "Eggs / Dairy",
+        isSelected: false
     },
     {
         id: 18,
         name: "Milk",
         image: milk,
-        category: "Eggs / Dairy"
+        category: "Eggs / Dairy",
+        isSelected: false
     },
     {
         id: 19,
         name: "Butter",
         image: butter,
-        category: "Eggs / Dairy"
+        category: "Eggs / Dairy",
+        isSelected: false
     },
     {
         id: 20,
         name: "Bacon",
         image: bacon,
-        category: "Meats"
+        category: "Meats",
+        isSelected: false
     },
 
 ]

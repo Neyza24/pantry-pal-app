@@ -4,6 +4,7 @@ import { recipesByIngredientsSlice } from "./recipes/recipesByIngredientsSlice";
 import { searchTermSlice } from "./recipes/searchTerm";
 import { allIngredientsSlice } from "./recipes/allIngredientsSlice";
 import { selectedIngredientsSlice } from "./ingredients/selectedIngredients";
+import { categorySlice } from "./categories/categorySlice";
 
 
 
@@ -14,7 +15,8 @@ export const store = configureStore({
         recipesByIngredient: recipesByIngredientsSlice.reducer,
         searchTerm: searchTermSlice.reducer,
         allIngredients: allIngredientsSlice.reducer,
-        selectedIngredients: selectedIngredientsSlice.reducer
+        selectedIngredients: selectedIngredientsSlice.reducer,
+        category: categorySlice.reducer
     },
     
 })

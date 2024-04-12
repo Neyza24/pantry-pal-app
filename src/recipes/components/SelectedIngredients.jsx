@@ -1,17 +1,21 @@
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ListItem, Box, Grid, List, IconButton, ListItemText } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import { removeIngredient } from '../../store/ingredients/selectedIngredients';
 
 
 
+export const SelectedIngredients = ({ingredientselected}) => {
+    const dispatch = useDispatch();
 
-
-export const SelectedIngredients = () => {
-    const ingredientselected = useSelector(state => state.selectedIngredients);
+    const onRemoveSelectedIngredient = (ingredient) => {
+        dispatch(removeIngredient(ingredient));
+        
+    }
 
     return (
         <>
-            <Box sx={{ flexGrow: 1, maxWidth: 402 }}>
+            <Box sx={{ flexGrow: 1 }}>
                 
                 <Grid>
                     <Box>
@@ -21,7 +25,7 @@ export const SelectedIngredients = () => {
                                 (<ListItem
                                     key={ingredient.id}
                                     secondaryAction={
-                                        <IconButton edge="end" aria-label="delete">
+                                        <IconButton edge="end" aria-label="delete" onClick={() => onRemoveSelectedIngredient(ingredient)}>
                                             
                                             <DeleteIcon />
                                         </IconButton>

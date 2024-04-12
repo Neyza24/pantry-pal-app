@@ -1,10 +1,12 @@
 import { Box, Typography } from "@mui/material"
 import { AppLayout } from "../layout/AppLayout"
 import { Categories, IngredientsSelected, ListIngredients, SearchBar } from "../components"
-import { Recipes } from "../components/Recipes"
+// import { Recipes } from "../components/Recipes"
 
 
 export const IngredientsPage = () => {
+
+    
     return (
         <AppLayout>
 
@@ -30,7 +32,7 @@ export const IngredientsPage = () => {
                 <Typography variant="h4" sx={{ py: '0.5rem' }} color="text.primary">
                     Recipes
                 </Typography>
-                <Recipes />
+                {/* <Recipes /> */}
             </Box>
 
         </AppLayout>

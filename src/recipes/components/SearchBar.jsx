@@ -2,13 +2,14 @@
 import SearchIcon from '@mui/icons-material/Search';
 import { Button, InputBase, Paper } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectSearchTerm, setSearchTerm } from '../../store/recipes/searchTerm';
+import { setSearchTerm } from '../../store/recipes/searchTerm';
 
 
 export const SearchBar = () => {
-
-    const searchTerm = useSelector(selectSearchTerm);
     const dispatch = useDispatch();
+    const searchValue = useSelector(state => state.searchTerm);
+    console.log(searchValue);
+    
 
     const onSearchTermChangeHandler = (e) => {
         dispatch(setSearchTerm(e.target.value));
@@ -30,7 +31,7 @@ export const SearchBar = () => {
                 placeholder="Search your ingredients"
                 inputProps={{ 'aria-label': 'search' }}
                 type='text'
-                value={searchTerm}
+                value={searchValue}
                 onChange={onSearchTermChangeHandler}
             />
 
