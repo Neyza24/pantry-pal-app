@@ -160,7 +160,7 @@ const getDesignTokens = (mode) => ({
       color: '#2b3445'
     },
     h6: {
-      fontSize: 20,
+      fontSize: 18,
       fontWeight: 600,
       color: '#2b3445'
     },
@@ -168,7 +168,7 @@ const getDesignTokens = (mode) => ({
       fontSize: 18,
     },
     subtitle2: {
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: 400,
       color: '#191D21'
     },

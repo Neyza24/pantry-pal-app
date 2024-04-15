@@ -6,12 +6,12 @@ import { Categories, IngredientsSelected, ListIngredients, SearchBar } from "../
 
 export const IngredientsPage = () => {
 
-    
+
     return (
         <AppLayout>
 
             <Box sx={{ height: { xs: '240px' }, width: '100%', paddingTop: '80px', px: { xs: '1.25rem', md: '3.75rem' } }} >
-                <Typography variant="h2" sx={{ fontSize: '2rem', pb: '2rem', color: '#333333', textAlign: 'center' }} >
+                <Typography variant="h2" sx={{ fontSize: '2.125rem', pb: '2rem', color: '#333333', textAlign: 'center' }} >
                     What is in your fridge?
                 </Typography>
                 <SearchBar />
@@ -29,9 +29,9 @@ export const IngredientsPage = () => {
                 <IngredientsSelected />
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', mt: 2, px: { xs: '1.25rem', md: '3.75rem' } }}>
-                <Typography variant="h4" sx={{ py: '0.5rem' }} color="text.primary">
+                {/* <Typography variant="h4" sx={{ py: '0.5rem' }} color="text.primary">
                     Recipes
-                </Typography>
+                </Typography> */}
                 {/* <Recipes /> */}
             </Box>
 

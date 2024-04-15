@@ -1,46 +1,50 @@
-import { useSelector} from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Box } from '@mui/material'
 import { IngredientCard } from './IngredientCard';
-
-
-import { selectFilteredAllIngredients } from '../../store/recipes/allIngredientsSlice';
+import { selectFilteredAllIngredients } from '../../store/ingredients/allIngredientsSlice';
+import { setSelectCategory } from '../../store/ingredients/categorySlice';
 
 
 
 export const ListIngredients = () => {
+
+    const dispatch = useDispatch();
     const allIngredients = useSelector(selectFilteredAllIngredients);
-
-
     const ingredientselected = useSelector(state => state.selectedIngredients);
-    console.log(ingredientselected);
 
 
     const checkIngredientInList = ingredient => {
         return ingredientselected.some(item => item.id === ingredient.id);
     }
 
-    return (
-            <Box  
-                    sx={{ 
-                        display: 'flex', 
-                        gap: { xs: '1rem' }, 
-                        flexWrap: 'wrap', 
-                        justifyContent: { xs: 'space-around', sm: 'start', }, 
-                        flexBasis: '70%' }}>
+    useEffect(() => {
+        dispatch(setSelectCategory('All ingredients'))
+    }, [dispatch])
 
-                {
-                    allIngredients?.map(ingredient => {
-                        const isIngredientInList = checkIngredientInList(ingredient);
-                        
-                        return (
-                            <IngredientCard ingredient={ingredient} key={ingredient.id} isIngredientInList={isIngredientInList}/>
-                        )
-                        
-                    }
+    return (
+        <Box
+            sx={{
+                display: 'flex',
+                gap: { xs: '1rem' },
+                flexWrap: 'wrap',
+                justifyContent: { xs: 'space-around', sm: 'start', },
+                flexBasis: '70%'
+            }}>
+
+            {
+                allIngredients?.map(ingredient => {
+                    const isIngredientInList = checkIngredientInList(ingredient);
+
+                    return (
+                        <IngredientCard ingredient={ingredient} key={ingredient.id} isIngredientInList={isIngredientInList} />
                     )
+
                 }
-            </Box>
-        
+                )
+            }
+        </Box>
+
     )
 }
 

@@ -7,6 +7,7 @@ export const IngredientsSelected = () => {
 
     const ingredientselected = useSelector(state => state.selectedIngredients);
     const numSelected = ingredientselected.length;
+    // console.log(ingredientselected);
 
     return (
         <Grid item xs={12} sm={4} sx={{
@@ -27,7 +28,7 @@ export const IngredientsSelected = () => {
         }}
         >
             <Typography variant="h5" >
-                0 selected ingredients
+                {numSelected} selected ingredients
             </Typography>
 
 
@@ -40,7 +41,7 @@ export const IngredientsSelected = () => {
 
             <SelectedIngredients ingredientselected={ingredientselected} />
 
-            <Typography variant="subtitle1" sx={[{ mt: 0, mb: '1rem' }, numSelected >= 2 && { display: 'none' }]}>{numSelected == 0 ? 'Selecciona Ingredientes' : 'Selecciona almenos 2 ingredientes'}</Typography>
+            <Typography variant="subtitle1" sx={[{ mt: 0, mb: '1rem' }, numSelected >= 2 && { display: 'none' }]}>{numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}</Typography>
             <Button variant="contained" size="large" sx={{ borderBottom: '4px' }} >Generate Recipes</Button>
         </Grid>
     )

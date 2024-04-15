@@ -1,7 +1,7 @@
 
 export const categories = [
     'All ingredients',
-    'Eggs and Dairy',
+    'Eggs/Dairy',
     'Grains',
     'Meats',
     'Seafood',

@@ -7,7 +7,7 @@ export const ToggleColorMode = () => {
         <Box sx={{ maxWidth: '32px' }}>
             <Button
                 variant="text"
-                
+
                 size="small"
                 aria-label="button to toggle theme"
                 sx={{ minWidth: '32px', height: '32px', p: '4px' }}

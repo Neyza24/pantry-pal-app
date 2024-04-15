@@ -1,7 +1,8 @@
 import { Chip } from "@mui/material"
 import { categories } from "../../mock/categories"
 import { useDispatch, useSelector } from "react-redux"
-import { selectCategory } from "../../store/categories/categorySlice";
+import { setSelectCategory } from "../../store/ingredients/categorySlice";
+
 
 
 
@@ -10,8 +11,10 @@ export const Categories = () => {
     const dispatch = useDispatch();
     const selectedCategory = useSelector(state => state.category.selectedCategory);
 
+    console.log(selectedCategory);
+
     const handleClick = (category) => {
-        dispatch(selectCategory(category))
+        dispatch(setSelectCategory(category))
     }
     
     return (
@@ -27,4 +30,3 @@ export const Categories = () => {
         </div>
     )
 }
-

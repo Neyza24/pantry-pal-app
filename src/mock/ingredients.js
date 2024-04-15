@@ -132,28 +132,28 @@ export const dataIngredients = [
         id: 16,
         name: "Egg",
         image: eggs,
-        category: "Eggs / Dairy",
+        category: "Eggs/Dairy",
         isSelected: false
     },
     {
         id: 17,
         name: "Cheese",
         image: cheese,
-        category: "Eggs / Dairy",
+        category: "Eggs/Dairy",
         isSelected: false
     },
     {
         id: 18,
         name: "Milk",
         image: milk,
-        category: "Eggs / Dairy",
+        category: "Eggs/Dairy",
         isSelected: false
     },
     {
         id: 19,
         name: "Butter",
         image: butter,
-        category: "Eggs / Dairy",
+        category: "Eggs/Dairy",
         isSelected: false
     },
     {
