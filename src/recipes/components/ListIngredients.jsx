@@ -25,6 +25,7 @@ export const ListIngredients = () => {
     return (
         <Box
             sx={{
+
                 display: 'flex',
                 gap: { xs: '1rem' },
                 flexWrap: 'wrap',

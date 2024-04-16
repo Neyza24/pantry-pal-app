@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-import { selectSearchTerm } from './searchTerm';
+// import { selectSearchTerm } from './searchTerm';
 import { dataIngredients } from '../../mock/ingredients';
-import { selectCategory } from './categorySlice';
+// import { selectCategory } from './categorySlice';
 
 
 const initialState = {
@@ -17,13 +17,13 @@ export const allIngredientsSlice = createSlice({
 });
 
 export const { ingredientsByCategory } = allIngredientsSlice.actions;
-export const selectedIngredients = state => state.allIngredients.ingredients;
+const selectedIngredients = state => state.allIngredients.ingredients;
+const selectSearchTerm = state => state.searchTerm.term;
+const selectCategory = state => state.category.selectedCategory;
+
+export const selectFilteredAllIngredients = createSelector([selectedIngredients, selectSearchTerm, selectCategory], (ingredients, term, selectedCategory) => {
+    return ingredients?.filter((ingredient) => ingredient.name.toLowerCase().includes(term.toLowerCase()) && (selectedCategory === 'All ingredients' || ingredient.category === selectedCategory))
+})
 
 
-export const selectFilteredAllIngredients =  (state) => {
-    const allIngredients = selectedIngredients(state);
-    const searchTerm = selectSearchTerm(state);
-    const category = selectCategory(state);
 
-    return allIngredients?.filter((ingredient) => ingredient.name.toLowerCase().includes(searchTerm.toLowerCase()) && (category === 'All ingredients' || ingredient.category === category))
-}

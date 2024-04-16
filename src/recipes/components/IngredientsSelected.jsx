@@ -14,7 +14,7 @@ export const IngredientsSelected = () => {
             width: '100%',
             height: '100%',
             position: 'sticky',
-            top: '120px',
+            top: '0px',
             display: 'flex',
             flexDirection: 'column',
             textAlign: 'center',
