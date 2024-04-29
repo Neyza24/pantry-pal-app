@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material"
 import { AppLayout } from "../layout/AppLayout"
 import { Categories, IngredientsSelected, ListIngredients, SearchBar } from "../components"
-// import { Recipes } from "../components/Recipes"
+import { Recipes } from "../components/Recipes"
+
 
 
 export const IngredientsPage = () => {
@@ -18,7 +19,7 @@ export const IngredientsPage = () => {
             </Box>
 
             <Box maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, margin: 'auto' }}>
-                <Typography variant="h4" sx={{ pb: '0.5rem', fontSize: {xs: '1.75rem', md: '2rem'} }}>
+                <Typography variant="h4" sx={{ pb: '0.5rem', fontSize: { xs: '1.75rem', md: '2rem' } }}>
                     Ingredients
                 </Typography>
                 <Categories />
@@ -28,12 +29,10 @@ export const IngredientsPage = () => {
                 <ListIngredients />
                 <IngredientsSelected />
             </Box>
-            <Box sx={{ display: 'flex', flexDirection: 'column', mt: 2, px: { xs: '1.25rem', md: '3.75rem' } }}>
-                {/* <Typography variant="h4" sx={{ py: '0.5rem' }} color="text.primary">
-                        Recipes
-                    </Typography> */}
-                {/* <Recipes /> */}
+            <Box>
+                <Recipes />
             </Box>
+
         </AppLayout>
     )
 }
