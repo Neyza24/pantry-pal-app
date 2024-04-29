@@ -24,16 +24,19 @@ export const SelectedIngredients = ({ ingredientselected }) => {
                                 (<ListItem
                                     key={ingredient.id}
                                     secondaryAction={
-                                        <IconButton edge="end" aria-label="delete" onClick={() => onRemoveSelectedIngredient(ingredient)}>
-
-                                            <DeleteIcon />
+                                        <IconButton 
+                                            edge="end" 
+                                            aria-label="delete" 
+                                            onClick={() => onRemoveSelectedIngredient(ingredient)}
+                                            
+                                        >
+                                            <DeleteIcon fontSize="small" />
                                         </IconButton>
                                     }
                                 >
 
                                     <ListItemText
                                         primary={ingredient.name}
-
                                     />
                                 </ListItem>)
                                 )}

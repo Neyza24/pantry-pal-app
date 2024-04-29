@@ -6,11 +6,6 @@
     
 }
 
-body {
-    background-color: #FAFFE6;
-}
-
-
 .chipContainer {
     
     overflow: auto;
@@ -27,9 +22,7 @@ body {
     background-color: #fff;
 }
 
-.navbar-active {
-    background-color: #fff;
-}
+
 
 /* .navbar-active {
     background-color: #fff;
@@ -37,3 +30,59 @@ body {
     transition:  background-color 150ms ease-in-out 0s, border-bottom-color 150ms ease-in-out 0s
 } */
 
+.searchContainer{
+    border: 0.0625rem solid #121212;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.25rem #121212;
+}
+
+
+.retro {
+    font-family: monospace;
+    font-weight: 700;
+
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    border: solid 0.125rem #121212;
+    box-shadow: 0.25rem 0.25rem #121212;
+    transition: transform 50ms, box-shadow 50ms;
+}
+
+.retro:active {
+    transform: translate(0.125rem, 0.125rem);
+    box-shadow: 0.125rem 0.12rem #121212;
+}
+
+.span {
+    color: #fcfdff;
+    padding: 0.5rem;
+    position: relative;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+}
+
+.span:before {
+    background: #9ADABF;
+    border-radius: 0.5rem;
+    content: "";
+    height: 95%;
+    left: 4px;
+    position: absolute;
+    top: 0;
+    transform: rotate(1deg);
+    width: 100%;
+    z-index: -1;
+    
+}
+
+.footer__icon-heart{
+    display: inline-block;
+    filter: saturate(0.7);
+    margin-inline: 0.25rem;
+    min-width: 1.75em;
+    text-align: center;
+}
+
+
+
+/*Free Taco Tuesday SVG provided by SVGeez.com - CC 4.0 License - © 2019 Megan Young */

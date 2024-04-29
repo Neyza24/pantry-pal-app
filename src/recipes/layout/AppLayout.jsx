@@ -1,18 +1,18 @@
-import { Container } from "@mui/material"
 import { Footer, Header } from "../components"
+import { Container } from "@mui/material"
+
 
 
 export const AppLayout = ({ children }) => {
     return (
         <>
-            <Container maxWidth="lg" sx={{  px: { xs: 0 } }}>
+            <Container maxWidth="xxl" sx={{  px: { xs: 0, sm: 0} }}>
                 <Header />
                 <main >
                     {children}
                 </main>
                 <Footer />
             </Container>
-
         </>
     )
 }

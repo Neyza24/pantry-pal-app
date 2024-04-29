@@ -5,12 +5,12 @@ import { useState } from 'react';
 
 
 
-
 export const AppTheme = ({ children }) => {
 
     const [mode] = useState('light');
-
     const appTheme = createTheme(getAppTheme(mode));
+
+    
 
     return (
         <ThemeProvider theme={appTheme}>

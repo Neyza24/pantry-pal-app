@@ -1,19 +1,24 @@
 import { Box, Button } from "@mui/material";
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 
 
 export const ToggleColorMode = () => {
     return (
-        <Box sx={{ maxWidth: '32px' }}>
+        <Box sx={{
+            maxWidth: '40px',
+            borderRadius: '50%'
+        }}>
             <Button
                 variant="text"
-
                 size="small"
                 aria-label="button to toggle theme"
-                sx={{ minWidth: '32px', height: '32px', p: '4px' }}
+                sx={{
+                    minWidth: '32px',
+                    height: '32px',
+                    borderRadius: '50%'
+                }}
             >
-
-                <Brightness7Icon fontSize="small" />
+                <WbSunnyOutlinedIcon fontSize="small" />
             </Button>
         </Box>
     )

@@ -17,7 +17,6 @@ import broccoli from '../assets/broccoli.svg';
 import corn from '../assets/corn.svg';
 import butter from '../assets/butter.svg';
 import milk from '../assets/milk.svg';
-// import lemon from '../assets/lemon.svg';
 import mushroom from '../assets/mushroom.svg';
 
 
@@ -163,7 +162,6 @@ export const dataIngredients = [
         category: "Meats",
         isSelected: false
     },
-
 ]
 
 

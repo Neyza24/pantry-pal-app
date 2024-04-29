@@ -1,49 +1,54 @@
 import { useSelector } from 'react-redux';
-import { Button, CardMedia, Grid, Typography } from '@mui/material';
-import illustration from '../../assets/happy-girl.png';
 import { SelectedIngredients } from './SelectedIngredients';
+import { Button, CardMedia, Box, Typography } from '@mui/material';
+import illustration from '../../assets/happy-girl.png';
+
 
 export const IngredientsSelected = () => {
 
     const ingredientselected = useSelector(state => state.selectedIngredients);
     const numSelected = ingredientselected.length;
-    // console.log(ingredientselected);
+
 
     return (
-        <Grid item xs={12} sm={4} sx={{
-            width: '100%',
+        <Box sx={{
             height: '100%',
-            position: 'sticky',
-            top: '0px',
+            minWidth: '240px',
+            maxWidth: '360px',
             display: 'flex',
             flexDirection: 'column',
             textAlign: 'center',
-            border: '1px solid #D6E2EB',
-            borderRadius: '4px',
-            padding: '24px',
+            border: '0.125rem solid #323232',
+            borderRadius: '0.625rem',
+            padding: '1.5rem',
             background: '#fff',
             gap: '16px',
-            flexBasis: '30%',
-            minHeight: 140
+            flexBasis: { xs: '100%', sm: '40%', md: '35%' },
+            minHeight: '440px'
+
         }}
         >
             <Typography variant="h5" >
-                {numSelected} selected ingredients
+                {numSelected} Selected ingredients
             </Typography>
-
 
             <CardMedia
                 component="img"
                 image={illustration}
                 alt=''
-                sx={[{ margin: 'auto', width: '40%' }, numSelected >= 2 && { display: 'none' }]}
+                sx={[{ margin: 'auto', maxWidth: '30%' }, numSelected >= 2 && { display: 'none' }]}
             />
 
             <SelectedIngredients ingredientselected={ingredientselected} />
 
-            <Typography variant="subtitle1" sx={[{ mt: 0, mb: '1rem' }, numSelected >= 2 && { display: 'none' }]}>{numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}</Typography>
-            <Button variant="contained" size="large" sx={{ borderBottom: '4px' }} >Generate Recipes</Button>
-        </Grid>
+            <Typography
+                variant="subtitle1"
+                sx={[{ mt: 0, mb: '1rem' }, numSelected >= 2 && { display: 'none' }]}
+            >
+                {numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}
+            </Typography>
+            <Button variant="contained" size="large" disabled={numSelected < 2} >Generate Recipes</Button>
+        </Box>
     )
 }
 

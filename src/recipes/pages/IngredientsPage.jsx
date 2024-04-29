@@ -6,35 +6,34 @@ import { Categories, IngredientsSelected, ListIngredients, SearchBar } from "../
 
 export const IngredientsPage = () => {
 
-
     return (
+
         <AppLayout>
 
-            <Box sx={{ height: { xs: '240px' }, width: '100%', paddingTop: '80px', px: { xs: '1.25rem', md: '3.75rem' } }} >
-                <Typography variant="h2" sx={{ fontSize: '2.125rem', pb: '2rem', color: '#333333', textAlign: 'center' }} >
-                    What is in your fridge?
+            <Box maxWidth="lg" sx={{ height: 'auto', width: '100%', pt: '3rem', pb: '2.5rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, margin: 'auto' }} >
+                <Typography variant="h2" sx={{ pb: '2rem', textAlign: 'center', pt: '0rem' }} >
+                    What is in your<span className="span">fridge?</span>
                 </Typography>
                 <SearchBar />
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', mt: 2, px: { xs: '1.25rem', md: '3.75rem' } }}>
-                <Typography variant="h4" sx={{ py: '0.5rem' }} color="text.primary">
+            <Box maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, margin: 'auto' }}>
+                <Typography variant="h4" sx={{ pb: '0.5rem', fontSize: {xs: '1.75rem', md: '2rem'} }}>
                     Ingredients
                 </Typography>
                 <Categories />
             </Box>
 
-            <Box sx={{ width: '100%', display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, mt: '2rem', px: { xs: '1.25rem', md: '3.75rem' }, gap: { xs: '1rem' } }}>
+            <Box maxWidth="lg" sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, pt: '1.5rem', pb: '3rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, gap: { xs: '2rem', sm: '1rem', md: '2rem', lg: '3rem' }, margin: 'auto' }}>
                 <ListIngredients />
                 <IngredientsSelected />
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', mt: 2, px: { xs: '1.25rem', md: '3.75rem' } }}>
                 {/* <Typography variant="h4" sx={{ py: '0.5rem' }} color="text.primary">
-                    Recipes
-                </Typography> */}
+                        Recipes
+                    </Typography> */}
                 {/* <Recipes /> */}
             </Box>
-
         </AppLayout>
     )
 }

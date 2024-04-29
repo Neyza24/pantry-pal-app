@@ -1,48 +1,59 @@
+// import { useEffect, useState } from "react";
 import { Box, Toolbar, Typography } from "@mui/material"
 import { ToggleColorMode } from "./ToggleColorMode";
-import { useEffect, useState } from "react";
+
 
 export const Header = () => {
 
-    const [colorChange, setColorchange] = useState(false);
+    // const [colorChange, setColorchange] = useState(false);
 
-    const changeBackground = () => {
-        if (window.scrollY >= 56) {
-            setColorchange(true);
-        } else {
-            setColorchange(false);
-        }
-    };
+    // const changeBackground = () => {
+    //     if (window.scrollY >= 56) {
+    //         setColorchange(true);
+    //     } else {
+    //         setColorchange(false);
+    //     }
+    // };
 
-    useEffect(() => {
-        changeBackground();
-        window.addEventListener("scroll", changeBackground)
-    })
+    // useEffect(() => {
+    //     changeBackground();
+    //     window.addEventListener("scroll", changeBackground)
+    // })
 
     return (
-        < Box className={colorChange ? 'navbar-active' : 'navbar'} sx={{ position: 'sticky', top: '0px', zIndex: 20, }}>
-            <Toolbar sx={{ width: '100%', height: '56px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} >
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="a"
-                    href="/"
+        <Box  >
+            <Box maxWidth="1440px" sx={{ margin: 'auto' }}>
+                <Toolbar
                     sx={{
-                        fontFamily: 'monospace',
-                        fontWeight: 700,
-                        letterSpacing: '.1rem',
-                        color: 'inherit',
-                        textDecoration: 'none',
+                        width: '100%',
+                        height: 'auto',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        py: '1rem',
+                        px: { xs: '1rem', sm: '1.5rem', md: '2rem', xl: '3.5rem' },
                     }}
                 >
-                    PANTRY-PAL
-                </Typography>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        sx={{
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.08rem',
+                            
+                        }}
+                    >
+                        PantryPal
+                    </Typography>
 
-                <Box>
-                    <ToggleColorMode sx={{ color: '#000' }} />
-                </Box>
-            </Toolbar>
+                    <Box>
+                        <ToggleColorMode />
+                    </Box>
+                </Toolbar>
+            </Box>
         </Box>
+
     )
 }
 

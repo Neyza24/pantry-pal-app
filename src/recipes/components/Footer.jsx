@@ -1,52 +1,43 @@
-import { Box, IconButton, Link, Stack, Typography } from "@mui/material";
+import { Box, IconButton, Stack, Typography } from "@mui/material";
 
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-function Copyright() {
-    return (
-        <Typography variant="body2" color="text.secondary" mt={1}>
-            <Link href="#" sx={{
-                color: 'text.secondary',
-            }}>PantryPal&nbsp;</Link> {' '}
-            {new Date().getFullYear()}
-        </Typography>
-    );
-}
 
 export const Footer = () => {
     return (
-        <Box
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: { xs: 4, sm: 8 },
-                py: { xs: 4, sm: 6 },
-                textAlign: { sm: 'center', md: 'left' },
-            }}
-        >
+        <Box sx={{ backgroundColor: '#323232', display: 'block' }}>
             <Box
+                maxWidth="1440px"
                 sx={{
                     display: 'flex',
-                    justifyContent: 'space-between',
-                    pt: { xs: 3, sm: 6 },
+                    flexWrap: 'wrap',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    gap: '1rem',
+                    justifyContent: { sm: 'space-between' },
+                    alignItems: 'center',
+                    py: { xs: 4 },
                     width: '100%',
                     borderTop: '1px solid',
                     borderColor: 'divider',
-
+                    px: { xs: '1rem', sm: '1.5rem', md: '2rem', xl: '3.5rem' },
+                    margin: 'auto'
                 }}
             >
-                <div>
-                    <Copyright />
-                </div>
+                <Box
+                    sx={{ display: 'inline-block', textAlign: 'left' }}
+                >
+                    <Typography variant="body2" sx={{ color: '#fff' }} >
+                        Made with<span aria-label="love" className="footer__icon-heart">🧡</span>Pantrypal {' '}{new Date().getFullYear()}
+                    </Typography>
+                </Box>
                 <Stack
                     direction="row"
                     justifyContent="left"
                     spacing={1}
                     useFlexGap
                     sx={{
-                        color: 'text.secondary',
+                        color: '#fff',
                     }}
                 >
                     <IconButton
