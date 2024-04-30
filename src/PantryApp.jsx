@@ -1,12 +1,13 @@
 
-import { IngredientsPage } from "./recipes/pages"
+
+import AppRouter from "./router/AppRouter"
 import { AppTheme } from "./theme"
 
 export const PantryApp = () => {
 
   return (
     <AppTheme>
-      <IngredientsPage />
+      <AppRouter />
     </AppTheme>
   )
 }

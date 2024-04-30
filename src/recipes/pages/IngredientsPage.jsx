@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material"
 import { AppLayout } from "../layout/AppLayout"
 import { Categories, IngredientsSelected, ListIngredients, SearchBar } from "../components"
-import { Recipes } from "../components/Recipes"
 
 
 
@@ -29,9 +28,7 @@ export const IngredientsPage = () => {
                 <ListIngredients />
                 <IngredientsSelected />
             </Box>
-            <Box>
-                <Recipes />
-            </Box>
+            
 
         </AppLayout>
     )

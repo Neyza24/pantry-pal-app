@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { SelectedIngredients } from './SelectedIngredients';
-import { Button, CardMedia, Box, Typography } from '@mui/material';
+import { Button, CardMedia, Box, Typography, } from '@mui/material';
 import illustration from '../../assets/happy-girl.png';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { fetchRecipes } from "../../store/recipes/thunks";
+import {Link as RouterLink} from 'react-router-dom';
 
 
 export const IngredientsSelected = () => {
@@ -16,9 +17,13 @@ export const IngredientsSelected = () => {
     const query = ingredientselected.map((ingredient) => ingredient.name ).join(',');
     console.log(query);
 
-    useEffect(() => {
-        dispatch(fetchRecipes(query)); //fetchRecipes('https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2)
-    }, [dispatch, query])
+    // useEffect(() => {
+    //     dispatch(fetchRecipes(query)); //fetchRecipes('https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2)
+    // }, [dispatch, query])
+
+    const onSubmit = () => {
+        dispatch(fetchRecipes(query));
+    }
 
 
     return (
@@ -58,7 +63,7 @@ export const IngredientsSelected = () => {
             >
                 {numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}
             </Typography>
-            <Button variant="contained" size="large" disabled={numSelected < 2}>Generate Recipes</Button>
+            <Button onClick={onSubmit} variant="contained" size="large" disabled={numSelected < 2} to={'/recipes'} component={RouterLink}>Generate Recipes</Button>
         </Box>
     )
 }
