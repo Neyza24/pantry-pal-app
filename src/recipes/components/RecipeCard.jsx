@@ -36,11 +36,12 @@ export const RecipeCard = ({ recipe }) => {
                 />
             </Box>
 
-            <CardContent sx={{ p: 3 }}>
+            <CardContent sx={{ p: '24px 16px'}}>
 
                 <Typography
                     variant="h6"
-                    sx={{ fontZise: { xs: '18px', sm: '20px' } }}
+                    className="demo-1"
+                    sx={{ fontZise: { xs: '18px', sm: '20px' }, }}
                 >
                     {recipe.title}
                 </Typography>
