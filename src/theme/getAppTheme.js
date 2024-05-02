@@ -2,29 +2,29 @@ import { alpha } from "@mui/material/styles";
 import { red } from "@mui/material/colors";
 
 export const brand = {
-      50: "#FFFCF0",
-      100: "#FFF7DB",
-      200: "#FFF0B8",
-      300: "#FFE894",
-      400: "#FFE175",
-      500: "#FFD850",
-      600: "#FFCB0F",
-      700: "#C79C00",
-      800: "#856800",
-      900: "#423400",
+  50: "#FFFCF0",
+  100: "#FFF7DB",
+  200: "#FFF0B8",
+  300: "#FFE894",
+  400: "#FFE175",
+  500: "#FFD850",
+  600: "#FFCB0F",
+  700: "#C79C00",
+  800: "#856800",
+  900: "#423400",
 };
 
 export const secondary = {
-      50: "#ECF8F3",
-      100: "#DDF3EA",
-      200: "#BCE6D5",
-      300: "#9ADABF",
-      400: "#79CEAA",
-      500: "#56C195",
-      600: "#3CA479",
-      700: "#2D7B5B",
-      800: "#1E523C",
-      900: "#0F291E",
+  50: "#ECF8F3",
+  100: "#DDF3EA",
+  200: "#BCE6D5",
+  300: "#9ADABF",
+  400: "#79CEAA",
+  500: "#56C195",
+  600: "#3CA479",
+  700: "#2D7B5B",
+  800: "#1E523C",
+  900: "#0F291E",
 };
 
 export const gray = {
@@ -154,6 +154,7 @@ const getDesignTokens = (mode) => ({
       fontSize: 32,
       fontWeight: 500,
       lineHeight: 1.5,
+      letterSpacing: -0.2,
     },
     h5: {
       fontSize: 20,
@@ -162,6 +163,7 @@ const getDesignTokens = (mode) => ({
     h6: {
       fontSize: 18,
       fontWeight: 600,
+      lineHeight: 1.4,
     },
     subtitle1: {
       fontSize: 16,
@@ -224,22 +226,25 @@ export function getAppTheme(mode) {
           root: ({ theme, ownerState }) => ({
             boxShadow: "none",
             borderRadius: "0.625rem",
-            textTransform: "uppercase",
+            textTransform: "capitalize",
             ...(ownerState.size === "small" && {
               maxHeight: "32px",
             }),
             ...(ownerState.size === "medium" && {
               height: "40px",
             }),
+            ...(ownerState.size === "large" && {
+              height: "48px",
+            }),
             ...(ownerState.variant === "contained" && {
               backgroundColor: brand[500],
               border: "0.125rem solid #323232",
               padding: "0.75rem 1rem",
               boxShadow: "0.25rem 0.25rem #323232",
-              transition: "transform 25ms, box-shadow 25ms",
+              transition: "transform 50ms, box-shadow 50ms",
               "&:hover": {
                 backgroundColor: brand[400],
-                borderWidth: "1px",
+                borderWidth: "0.125rem",
                 transition: "translate(0.125rem, 0.125rem)",
                 boxShadow: "0.125rem 0.12rem #323232",
               },
@@ -252,31 +257,65 @@ export function getAppTheme(mode) {
                 borderColor: brand[200],
               },
             }),
-            ...(ownerState.variant === "text" && {
-              backgroundColor: brand[500],
-              border: "0.0625rem solid #323232",
-              color: "#121212",
-              boxShadow: "0.12rem 0.12rem #323232",
-              transition: "transform 50ms, box-shadow 50ms",
+            ...(ownerState.variant === "outlined" && {
+              color: '#323232',
+              backgroundColor: brand[50],
+              border: "0.125rem solid #323232",
+              padding: "0.75rem 1rem",
+              boxShadow: "0.25rem 0.25rem #323232",
+              transition: "transform .15s",
               "&:hover": {
-                backgroundColor: alpha(brand[500], 0.8),
-
+                backgroundColor: brand[100],
+                border: "0.125rem solid #323232",
                 transition: "translate(0.125rem, 0.125rem)",
-                boxShadow: "0.0625rem 0.06rem #323232",
+                boxShadow: "0.125rem 0.12rem #323232",
+              },
+              "&:active": {
+                transition: "translate(0.125rem, 0.125rem)",
+                boxShadow: "0.125rem 0.12rem #323232",
+              },
+            }),
+            ...(ownerState.variant === "outlined" && ownerState.size === "medium" && {
+              color: '#323232',
+              backgroundColor: brand[50],
+              border: "0.125rem solid #323232",
+              padding: "0.75rem 1rem",
+              boxShadow: "0.125rem 0.125rem #323232",
+              transition: "transform .15s",
+              "&:hover": {
+                backgroundColor: brand[100],
+                border: "0.125rem solid #323232",
+                transition: "translate(0.125rem, 0.125rem)",
+                boxShadow: "0.063rem 0.06rem #323232",
+              },
+              "&:active": {
+                transition: "translate(0.125rem, 0.125rem)",
+                boxShadow: "0.125rem 0.12rem #323232",
+              },
+            }),
+            ...(ownerState.variant === "text" && {
+              backgroundColor: '#fff',
+              border: "none",
+              color: "#323232",
+              transition: "transform 50ms",
+              "&:hover": {
+                backgroundColor: '#f3fbfb',
+                transition: "translate(0.125rem, 0.125rem)",
+
               },
             }),
             ...(theme.palette.mode === "dark" && {
               ...(ownerState.variant === "contained" &&
                 ownerState.color === "primary" && {
-                  border: `1px solid ${brand[600]}`,
+                border: `1px solid ${brand[600]}`,
+                backgroundImage: "none",
+                backgroundColor: brand[500],
+                "&:hover": {
+                  background: brand[600],
                   backgroundImage: "none",
-                  backgroundColor: brand[500],
-                  "&:hover": {
-                    background: brand[600],
-                    backgroundImage: "none",
-                    boxShadow: `0 0 0 1px  ${alpha(brand[700], 0.5)}`,
-                  },
-                }),
+                  boxShadow: `0 0 0 1px  ${alpha(brand[700], 0.5)}`,
+                },
+              }),
               ...(ownerState.variant === "outlined" && {
                 backgroundColor: "white",
                 border: "0.125rem solid #323232",
@@ -312,7 +351,7 @@ export function getAppTheme(mode) {
             border: "0.125rem solid #323232",
             transition: "transform 25ms, box-shadow 25ms",
             "&:hover": {
-              backgroundColor: "#f3fbfb",
+              backgroundColor: "#fff",
               transition: "translate(0.25rem, 0.25rem)",
             },
 

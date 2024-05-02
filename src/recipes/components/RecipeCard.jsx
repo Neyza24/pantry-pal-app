@@ -1,42 +1,45 @@
 
-import { Box, Card, CardContent, CardActions, CardMedia, Button, Typography } from "@mui/material";
-
+import { Box, Card, CardContent, CardMedia, Button, Typography, CardActions } from "@mui/material";
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 export const RecipeCard = ({ recipe }) => {
     return (
 
         <Card
-            elevation={3}
-            sx={{ position: 'relative', width: '18rem', minHeight: '316px' }}
+            sx={{ 
+                display: 'flex',
+                flexDirection: 'column',
+                height: '23.75rem',
+                width: {xs: '19rem', sm: '16.5rem', lg: '17rem'}, 
+                minHeight: '0',
+                transition: 'all 0.2s easy-in-out',
+                position: 'relative',
+                borderRadius: "0.725rem",
+            }}
         >
             <Box
                 sx={{
                     position: 'relative',
-                    paddingBottom: '100%',
                     overflow: 'hidden',
-                    borderRadius: '4px',
-                    height: 0
+                    borderRadius: '0.5rem 0rem',
+                    height: '208px',
+                    
                 }}
             >
                 <CardMedia
                     component='img'
-                    src={recipe.image}
+                    src={`${recipe.image}?fit=crop&auto=format`}
                     sx={{
-                        height: '100%',
-                        width: 'auto',
-                        minWidth: '100%',
-                        objectFit: 'cover',
                         position: 'absolute',
-                        top: 0,
-                        right: '50%',
-                        bottom: 'auto',
-                        left: 'auto',
-                        transform: 'translateX(50%)'
+                        aspectRatio: '16/15',
+                        objectFit: 'cover',
+                        bottom: '16px',
+                        
                     }}
                 />
             </Box>
 
-            <CardContent sx={{ p: '24px 16px'}}>
+            <CardContent sx={{ p: '0px 16px 28px', maxHeight: '128px' }}>
 
                 <Typography
                     variant="h6"
@@ -45,14 +48,15 @@ export const RecipeCard = ({ recipe }) => {
                 >
                     {recipe.title}
                 </Typography>
-                <Box>
-                    <Typography variant="subtitle2" sx={{ fontZise: { xs: '14px' } }}>
+                
+                    <Typography variant="subtitle2" sx={{ fontZise: { xs: '14px' }, pt: '8px' }}>
                         {recipe?.missedIngredientCount} missed ingredients
                     </Typography>
-                </Box>
+                
             </CardContent>
-            <CardActions sx={{ px: 3 }}>
-                <Button size="small">Learn More</Button>
+            <CardActions sx={{ p: '20px 16px', position: 'absolute', bottom: '0', width: '100%', }}>
+                <Button size="medium" variant="outlined" fullWidth='true'>View details <ArrowRightAltIcon sx={{textAlign: 'end', paddingLeft: '4px'}} /></Button>
+                
             </CardActions>
         </Card>
     )

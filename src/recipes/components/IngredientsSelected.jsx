@@ -63,7 +63,17 @@ export const IngredientsSelected = () => {
             >
                 {numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}
             </Typography>
-            <Button onClick={onSubmit} variant="contained" size="large" disabled={numSelected < 2} to={'/recipes'} component={RouterLink}>Generate Recipes</Button>
+
+            <Button 
+                onClick={onSubmit} 
+                variant="contained" 
+                size="large" 
+                disabled={numSelected < 2} 
+                to={'/recipes'} 
+                component={RouterLink}
+            >
+                Generate Recipes
+            </Button>
         </Box>
     )
 }
