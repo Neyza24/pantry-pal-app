@@ -6,19 +6,22 @@ export const ToggleColorMode = () => {
     return (
         <Box sx={{
             maxWidth: '40px',
-            borderRadius: '50%'
+            borderRadius: '50%',
+            
         }}>
             <Button
-                variant="text"
-                size="small"
+                variant="contained"
+                size="medium"
                 aria-label="button to toggle theme"
                 sx={{
                     minWidth: '32px',
                     height: '32px',
-                    borderRadius: '50%'
+                    borderRadius: '50%',
+                    padding: '4px', 
+                    boxShadow: "0.188rem 0.188rem #323232",
                 }}
             >
-                <WbSunnyOutlinedIcon fontSize="small" />
+                <WbSunnyOutlinedIcon fontSize="small"  />
             </Button>
         </Box>
     )

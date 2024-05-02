@@ -7,7 +7,6 @@
 }
 
 .chipContainer {
-    
     overflow: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
