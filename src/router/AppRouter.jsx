@@ -1,9 +1,9 @@
 
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { IngredientsPage } from '../recipes/pages/IngredientsPage'
-import RecipesPage from '../recipes/pages/RecipesPage'
+import { RecipesPage } from '../recipes/pages/RecipesPage'
 
-const AppRouter = () => {
+export const AppRouter = () => {
     return (
         <Routes>
             <Route path='/' element={<IngredientsPage />} />
@@ -12,5 +12,3 @@ const AppRouter = () => {
         </Routes>
     )
 }
-
-export default AppRouter

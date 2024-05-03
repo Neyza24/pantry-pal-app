@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
+import {Link as RouterLink} from 'react-router-dom';
+import { fetchRecipes } from "../../store/recipes/thunks";
 import { SelectedIngredients } from './SelectedIngredients';
 import { Button, CardMedia, Box, Typography, } from '@mui/material';
 import illustration from '../../assets/happy-girl.png';
-// import { useEffect } from 'react';
-import { fetchRecipes } from "../../store/recipes/thunks";
-import {Link as RouterLink} from 'react-router-dom';
+
 
 
 export const IngredientsSelected = () => {
@@ -16,10 +16,6 @@ export const IngredientsSelected = () => {
     console.log(ingredientselected);
     const query = ingredientselected.map((ingredient) => ingredient.name ).join(',');
     console.log(query);
-
-    // useEffect(() => {
-    //     dispatch(fetchRecipes(query)); //fetchRecipes('https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2)
-    // }, [dispatch, query])
 
     const onSubmit = () => {
         dispatch(fetchRecipes(query));
