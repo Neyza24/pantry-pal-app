@@ -9,10 +9,8 @@ export const RecipeCard = ({ recipe }) => {
             sx={{ 
                 display: 'flex',
                 flexDirection: 'column',
-                height: '23.75rem',
-                width: {xs: '19rem', sm: '16.5rem', lg: '17rem'}, 
-                minHeight: '0',
-                transition: 'all 0.2s easy-in-out',
+                height: '21.5rem',
+                width: {xs: '19rem', sm: '16rem', lg: '16rem'}, 
                 position: 'relative',
                 borderRadius: "0.725rem",
             }}
@@ -22,8 +20,7 @@ export const RecipeCard = ({ recipe }) => {
                     position: 'relative',
                     overflow: 'hidden',
                     borderRadius: '0.5rem 0rem',
-                    height: '208px',
-                    
+                    height: '11rem',
                 }}
             >
                 <CardMedia
@@ -39,7 +36,7 @@ export const RecipeCard = ({ recipe }) => {
                 />
             </Box>
 
-            <CardContent sx={{ p: '0px 16px 28px', maxHeight: '128px' }}>
+            <CardContent sx={{ p: '0px 16px 24px', maxHeight: '128px' }}>
 
                 <Typography
                     variant="h6"
@@ -54,7 +51,7 @@ export const RecipeCard = ({ recipe }) => {
                     </Typography>
                 
             </CardContent>
-            <CardActions sx={{ p: '20px 16px', position: 'absolute', bottom: '0', width: '100%', }}>
+            <CardActions sx={{ p: '0px 16px 20px', position: 'absolute', bottom: '0', width: '100%', }}>
                 <Button size="medium" variant="outlined" fullWidth='true'>View details <ArrowRightAltIcon sx={{textAlign: 'end', paddingLeft: '4px'}} /></Button>
                 
             </CardActions>

@@ -13,10 +13,11 @@ export const RecipesList = () => {
         <Box sx={{
                 width: '100%', 
                 display: 'flex', 
-                flexWrap: 'wrap', 
-                marginLeft: 'auto', 
-                marginRight: 'auto', 
-                gap: '1rem' }}>
+                flexWrap: 'wrap',  
+                gap: '1rem',
+                
+                }}
+        >
             
             {
                 recipes && recipes.map(recipe => (
