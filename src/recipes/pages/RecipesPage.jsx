@@ -6,7 +6,7 @@ import { LoaderView } from "../views/LoaderView";
 export const RecipesPage = () => {
 
     const { loading } = useSelector(state => state.recipes);
-    console.log(loading);
+    // console.log(loading);
 
     return (
         <AppLayout>

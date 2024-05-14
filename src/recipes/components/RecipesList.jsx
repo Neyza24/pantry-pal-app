@@ -7,7 +7,7 @@ import { Box } from "@mui/material";
 export const RecipesList = () => {
 
     const { recipes } = useSelector(state => state.recipes);
-    
+    console.log(recipes);
     
     return (
         <Box sx={{

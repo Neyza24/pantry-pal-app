@@ -1,8 +1,12 @@
 
 import { Box, Card, CardContent, CardMedia, Button, Typography, CardActions } from "@mui/material";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import {Link as RouterLink} from 'react-router-dom';
 
 export const RecipeCard = ({ recipe }) => {
+
+
+
     return (
 
         <Card
@@ -52,7 +56,16 @@ export const RecipeCard = ({ recipe }) => {
                 
             </CardContent>
             <CardActions sx={{ p: '0px 16px 20px', position: 'absolute', bottom: '0', width: '100%', }}>
-                <Button size="medium" variant="outlined" fullWidth='true'>View details <ArrowRightAltIcon sx={{textAlign: 'end', paddingLeft: '4px'}} /></Button>
+                <Button 
+                    size="medium" 
+                    variant="outlined" 
+                    fullWidth='true'
+                    to={`/recipes/1`}
+                    component={RouterLink}
+                >
+                    View details 
+                    <ArrowRightAltIcon sx={{textAlign: 'end', paddingLeft: '4px'}} />
+                </Button>
                 
             </CardActions>
         </Card>
