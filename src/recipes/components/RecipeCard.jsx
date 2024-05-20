@@ -2,10 +2,18 @@
 import { Box, Card, CardContent, CardMedia, Button, Typography, CardActions } from "@mui/material";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import {Link as RouterLink} from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { fetchRecipeById } from "../../store/recipes/thunks";
 
 export const RecipeCard = ({ recipe }) => {
+    const dispatch = useDispatch();
 
+    const id = recipe.id;
+    // console.log(id);
 
+    const onViewMore = () => {
+        dispatch(fetchRecipeById(id))
+    }
 
     return (
 
@@ -59,9 +67,10 @@ export const RecipeCard = ({ recipe }) => {
                 <Button 
                     size="medium" 
                     variant="outlined" 
-                    fullWidth='true'
-                    to={`/recipes/1`}
+                    fullWidth
+                    to={`/recipes/${id}`}
                     component={RouterLink}
+                    onClick={onViewMore}
                 >
                     View details 
                     <ArrowRightAltIcon sx={{textAlign: 'end', paddingLeft: '4px'}} />
