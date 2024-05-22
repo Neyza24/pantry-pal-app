@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 export const initialState = {
-    recipeById: {},
+    recipe: {},
     loading: false,
     hasError: false
 }
@@ -16,7 +16,7 @@ export const recipeByIdSlice = createSlice({
         },
         getRecipeByIdSuccess: (state, action) => {
             state.loading = false;
-            state.recipeById = action.payload;
+            state.recipe = action.payload;
         },
         getRecipeByIdError: (state) => {
             state.hasError = true;

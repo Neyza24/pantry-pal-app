@@ -10,7 +10,10 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 
 export const RecipesView = () => {
     return (
-        <Box maxWidth="lg" sx={{ display: 'flex', flexDirection: 'column', pt: '3rem', pb: '4rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, margin: 'auto' }}>
+        <Box 
+            maxWidth="lg" 
+            sx={{ display: 'flex', flexDirection: 'column', pt: '3rem', pb: '4rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, margin: 'auto' }}
+        >
 
                 <Typography variant="h4" sx={{ pb: '2rem', fontSize: { xs: '1.75rem', md: '2rem' } }}>
                     7 Sugested recipes for your week

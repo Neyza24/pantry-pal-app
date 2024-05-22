@@ -16,7 +16,7 @@ export const store = configureStore({
         allIngredients: allIngredientsSlice.reducer,
         selectedIngredients: selectedIngredientsSlice.reducer,
         category: categorySlice.reducer,
-        recipeById: recipeByIdSlice.reducer
+        recipe: recipeByIdSlice.reducer
     },
     
 })
