@@ -1,5 +1,5 @@
 import { recipeDataByID } from "../../mock/recipe"
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export const RecipeInstructions = () => {
 
@@ -33,15 +33,15 @@ export const RecipeInstructions = () => {
     }
 
     return (
-        <>
+        <Box>
             <Typography variant="h5" sx={{ pb: '1rem', fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
                 Instructions
             </Typography>
-            <div style={{ border: '1px solid #efefef', padding: '16px', borderRadius: '10px' }}>
+            <div style={{ border: '1px solid #efefef', padding: '20px', borderRadius: '10px' }}>
                 {
                     instructions
                 }
             </div>
-        </>
+        </Box>
     )
 }
