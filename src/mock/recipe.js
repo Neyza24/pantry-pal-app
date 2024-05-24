@@ -422,10 +422,3 @@ export const recipeDataByID = {
     spoonacularSourceUrl: "https://spoonacular.com/japanese-sushi-648506",
 };
 
-
-export const steps = recipeDataByID.analyzedInstructions[0].steps; //aquí ya tenemos el array de pasos, debemos recorrer para ordenarlo en una lista y mostrarlo en un componente visual
-//debemos obtener :
-// + El título d ela receta
-// + La imagen
-// + info de serving, score, healthScore, list ingredients
-// + source link to owner of recipe site 
