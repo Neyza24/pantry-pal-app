@@ -7,7 +7,6 @@ import SoupKitchenOutlinedIcon from '@mui/icons-material/SoupKitchenOutlined';
 import EnergySavingsLeafOutlinedIcon from '@mui/icons-material/EnergySavingsLeafOutlined';
 import { recipeDataByID } from '../../mock/recipe';
 
-//Iconos de time, price, score, likes
 export const RecipeInfoIcons = () => {
 
     const time = recipeDataByID.readyInMinutes;
