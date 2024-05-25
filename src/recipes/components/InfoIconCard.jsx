@@ -9,11 +9,9 @@ export const InfoIconCard = ({children}) => {
             flexDirection: 'column',
             alignItems: 'center',
             flexWrap: 'wrap',
-            padding: '16px',
+            padding: '8px 16px',
             background: 'none',
             borderWidth: 0,
-            
-            
         }}>
             {children}
         </Card>

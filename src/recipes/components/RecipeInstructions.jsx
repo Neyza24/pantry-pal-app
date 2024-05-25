@@ -1,10 +1,16 @@
-import { recipeDataByID } from "../../mock/recipe"
+
 import { Box, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
 
 export const RecipeInstructions = () => {
 
-    const stepsInstructions = recipeDataByID.analyzedInstructions[0].steps;
-    const paragraphInstructions = recipeDataByID.instructions;
+    const {recipe} = useSelector( state => state.recipe );
+    
+
+    const stepsInstructions = recipe.analyzedInstructions[0].steps;
+    
+    const paragraphInstructions = recipe.instructions;
+    
     let instructions = "";
 
     if (stepsInstructions) {
@@ -26,28 +32,26 @@ export const RecipeInstructions = () => {
         instructions = (<p>{paragraphInstructions}</p>);
     } else {
         instructions = (
-            <p>👩‍🍳👨‍🍳 See step-by-step recipe preparation instructions at <a href={recipeDataByID.sourceUrl} target="_blank">
-                {recipeDataByID.sourceName}
-            </a></p>
+            <p>👩‍🍳👨‍🍳 See step-by-step recipe preparation instructions at 
+                <a href={recipe.sourceUrl} target="_blank">{recipe.sourceName}</a>
+            </p>
         );
     }
 
     return (
-        <Box  >
-            
-                <Typography variant="h5" sx={{ pb: '1rem', fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
-                    Instructions
-                </Typography>
-                <div style={{ borderRadius: "0.625rem",
-                    border: "0.125rem solid #efefef", 
-                    background: '#ECF8F350', padding: '20px', }}>
-                    {
-                        instructions
-                    }
-                </div>
-
-            
-
+        <Box >
+            <Typography variant="h5" sx={{ pb: '1rem', fontSize: { xs: '1.25rem', md: '1.5rem' } }}>
+                Instructions
+            </Typography>
+            <div style={{
+                borderRadius: "0.625rem",
+                border: "0.125rem solid #323232",
+                padding: '20px',
+            }}>
+                {
+                    instructions
+                }
+            </div>
         </Box>
     )
 }

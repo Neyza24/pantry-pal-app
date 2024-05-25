@@ -1,14 +1,18 @@
 
-import { recipeDataByID } from "../../mock/recipe"
+import { useSelector } from "react-redux";
 import { RecipeInfoIcons } from "./RecipeInfoIcons"
 import { Box, Typography, CardMedia } from "@mui/material"
 
 export const HeadInfoRecipe = () => {
-    const titleRecipe = recipeDataByID.title;
-    const imgRecipe = recipeDataByID.image
+
+    const {recipe} = useSelector( state => state.recipe );
+    
+
+    const titleRecipe = recipe.title;
+    const imgRecipe = recipe.image
 
     return (
-        <Box >
+        <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
             <Typography
                 variant="h2"
                 sx={{
@@ -24,6 +28,7 @@ export const HeadInfoRecipe = () => {
                 width: '100%',
                 height: 'auto',
                 overflow: 'hidden',
+                
             }}>
                 <CardMedia
                     component="img"
@@ -31,17 +36,16 @@ export const HeadInfoRecipe = () => {
                     sx={{
                         width: '100%',
                         maxHeight: '280px',
-                        display: 'block',
-                        borderRadius: '10px',
+                        aspectRatio: '16/15',
                     }}
                 />
             </Box>
             <Box
                 sx={{
                     borderRadius: "0.625rem",
-                    border: "0.125rem solid #efefef",
+                    border: "0.125rem solid #323232",
                     padding: '4px',
-                    background: '#ECF8F350'
+                    
                 }}>
                 <RecipeInfoIcons />
             </Box>
