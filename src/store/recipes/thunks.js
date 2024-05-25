@@ -51,5 +51,4 @@ export function fetchRecipeById(id) {
     }
 }
 
-//debo continuar en el componente que corresponda para despachar el fetch async
 

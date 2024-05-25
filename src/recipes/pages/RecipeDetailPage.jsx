@@ -1,15 +1,16 @@
-// import { useParams } from "react-router-dom"
+import { useSelector } from "react-redux"
 import { AppLayout } from "../layout/AppLayout"
+import { RecipeView } from "../views/RecipeView"
 
 
 export const RecipeDetailPage = () => {
 
-
-    // const {id} = useParams();
+    const {recipe} = useSelector(state => state.recipe);
+    console.log(recipe.title);
 
     return (
         <AppLayout>
-            <div>Recipe Detail Page</div>
+            <RecipeView recipe={recipe}/>
         </AppLayout>
         
     )
