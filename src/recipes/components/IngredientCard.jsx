@@ -18,7 +18,7 @@ export const IngredientCard = ({ isIngredientInList, ingredient }) => {
 
 
     return (
-        <Box sx={{ minWidth: { xs: '132px' }, }}  >
+        <Box sx={{  }}  >
             <CardActionArea
                 onClick={isIngredientInList ? onRemoveSelectedIngredient : onAddSelectedIngredient} >
                 <Card elevation={0} sx={

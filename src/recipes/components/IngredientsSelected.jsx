@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {Link as RouterLink} from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { fetchRecipes } from "../../store/recipes/thunks";
 import { SelectedIngredients } from './SelectedIngredients';
 import { Button, CardMedia, Box, Typography, } from '@mui/material';
@@ -14,44 +14,46 @@ export const IngredientsSelected = () => {
     const numSelected = ingredientselected.length;
 
     console.log(ingredientselected);
-    const query = ingredientselected.map((ingredient) => ingredient.name ).join(',');
-    console.log(query);
+    const query = ingredientselected.map((ingredient) => ingredient.name).join(',');
 
     const onSubmit = () => {
         dispatch(fetchRecipes(query));
     }
 
-
     return (
-        <Box sx={{
-            height: '100%',
-            minWidth: '240px',
-            maxWidth: '360px',
-            display: 'flex',
-            flexDirection: 'column',
-            textAlign: 'center',
-            border: '0.125rem solid #323232',
-            borderRadius: '0.625rem',
-            padding: '1.5rem',
-            background: '#fff',
-            gap: '16px',
-            flexBasis: { xs: '100%', sm: '40%', md: '35%' },
-            minHeight: '440px'
-
-        }}
+        <Box
+            sx={{
+                height: '100%',
+                minWidth: '15rem',
+                minHeight: '27.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                textAlign: 'center',
+                border: '0.125rem solid #323232',
+                borderRadius: '0.625rem',
+                padding: '1.5rem',
+                background: '#fff',
+                gap: '1rem',
+                flexBasis: { xs: '100%', sm: '45%', md: '40%', lg: '35%' },
+            }}
         >
             <Typography variant="h5" >
                 {numSelected} Selected ingredients
             </Typography>
 
-            <CardMedia
-                component="img"
-                image={illustration}
-                alt=''
-                sx={[{ margin: 'auto', maxWidth: '30%' }, numSelected >= 2 && { display: 'none' }]}
-            />
+            <Box sx={{ display: 'block', width: '6.5rem', margin: 'auto' }}>
+                <CardMedia
+                    component="img"
+                    image={illustration}
+                    alt=''
+                    sx={[{ width: '100%' }, numSelected >= 2 && { display: 'none' }]}
+                />
+            </Box>
 
-            <SelectedIngredients ingredientselected={ingredientselected} />
+            {
+                numSelected >= 1 && <SelectedIngredients ingredientselected={ingredientselected} />
+            }
 
             <Typography
                 variant="subtitle1"
@@ -60,12 +62,12 @@ export const IngredientsSelected = () => {
                 {numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}
             </Typography>
 
-            <Button 
-                onClick={onSubmit} 
-                variant="contained" 
-                size="large" 
-                disabled={numSelected < 2} 
-                to={'/recipes'} 
+            <Button
+                onClick={onSubmit}
+                variant="contained"
+                size="large"
+                disabled={numSelected < 2}
+                to={'/recipes'}
                 component={RouterLink}
             >
                 Generate Recipes

@@ -20,20 +20,18 @@ export const ListIngredients = () => {
     }
 
     useEffect(() => {
-        dispatch(setSelectCategory('All ingredients'))
+        dispatch(setSelectCategory('All ingredients'));
     }, [dispatch])
 
     return (
         <Box
             sx={{
-                display: 'flex',
-                gap: { xs: '1rem', sm: '0.5rem', md: '0.5rem', lg: '1rem' },
-                flexWrap: 'wrap',
-                justifyContent: { xs: 'start' },
-                flexBasis: { xs: '100%', sm: '60%', md: '65%' },
-                
-            }}>
-
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(8.25rem, 1fr))',
+                gap: '1rem',
+                flexBasis: { xs: '100%', sm: '55%', md: '60%', lg: '65%' },
+            }}
+        >
             {
                 allIngredients?.map(ingredient => {
                     const isIngredientInList = checkIngredientInList(ingredient);
