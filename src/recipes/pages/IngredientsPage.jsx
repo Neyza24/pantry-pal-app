@@ -24,12 +24,11 @@ export const IngredientsPage = () => {
                 <Categories />
             </Box>
 
-            <Box maxWidth="lg" sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, pt: '1.5rem', pb: '3rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, gap: { xs: '2rem', sm: '1rem', md: '2rem', lg: '3rem' }, margin: 'auto' }}>
+            <Box maxWidth="lg" sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, pt: '1.5rem', pb: '3rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, gap: { xs: '2rem', sm: '2rem' }, margin: 'auto' }}>
                 <ListIngredients />
                 <IngredientsSelected />
             </Box>
             
-
         </AppLayout>
     )
 }
