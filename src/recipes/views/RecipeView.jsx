@@ -1,13 +1,11 @@
-
-import { Box, } from "@mui/material"
 import { HeadInfoRecipe } from "../components/HeadInfoRecipe"
 import { RecipeInstructions } from "../components/RecipeInstructions"
 import { IngredientsRecipe } from "../components/IngredientsRecipe"
-
+import { Buttons } from "../components/Buttons"
+import { Box, } from "@mui/material"
 
 
 export const RecipeView = () => {
-
 
     return (
         <Box 
@@ -25,6 +23,7 @@ export const RecipeView = () => {
             <HeadInfoRecipe />
             <IngredientsRecipe />
             <RecipeInstructions />
+            <Buttons />
         </Box>
     )
 }

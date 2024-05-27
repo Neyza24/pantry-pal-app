@@ -5,21 +5,6 @@ import { ToggleColorMode } from "./ToggleColorMode";
 
 export const Header = () => {
 
-    // const [colorChange, setColorchange] = useState(false);
-
-    // const changeBackground = () => {
-    //     if (window.scrollY >= 56) {
-    //         setColorchange(true);
-    //     } else {
-    //         setColorchange(false);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     changeBackground();
-    //     window.addEventListener("scroll", changeBackground)
-    // })
-
     return (
         <Box  >
             <Box maxWidth="1440px" sx={{ margin: 'auto' }}>

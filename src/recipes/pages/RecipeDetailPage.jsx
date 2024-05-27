@@ -1,16 +1,20 @@
 import { useSelector } from "react-redux"
 import { AppLayout } from "../layout/AppLayout"
 import { RecipeView } from "../views/RecipeView"
+import { LoaderView } from "../views/LoaderView";
 
 
 export const RecipeDetailPage = () => {
 
-    const {recipe} = useSelector(state => state.recipe);
-    console.log(recipe.title);
+    const {loading} = useSelector(state => state.recipe);
+    console.log(loading);
 
     return (
         <AppLayout>
-            <RecipeView recipe={recipe}/>
+            {
+                loading ? <LoaderView /> : <RecipeView />
+            }
+            
         </AppLayout>
         
     )

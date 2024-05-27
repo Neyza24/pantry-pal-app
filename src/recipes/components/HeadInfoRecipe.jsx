@@ -17,13 +17,13 @@ export const HeadInfoRecipe = () => {
                 variant="h2"
                 sx={{
                     textAlign: 'center',
-                    pb: '16px'
+                    pb: '1rem'
                 }}
             >
                 {titleRecipe}
             </Typography>
             <Box sx={{
-                pb: '16px',
+                pb: '1rem',
                 borderRadius: '10px',
                 width: '100%',
                 height: 'auto',

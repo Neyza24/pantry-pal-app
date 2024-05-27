@@ -7,15 +7,13 @@ import { Box } from "@mui/material";
 export const RecipesList = () => {
 
     const { recipes } = useSelector(state => state.recipes);
-    console.log(recipes);
+    // console.log(recipes);
     
     return (
         <Box sx={{
-                width: '100%', 
-                display: 'flex', 
-                flexWrap: 'wrap',  
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(14rem, 1fr))', 
                 gap: '1rem',
-                
                 }}
         >
             

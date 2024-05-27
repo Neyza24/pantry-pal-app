@@ -7,9 +7,9 @@ export const RecipeInstructions = () => {
     const {recipe} = useSelector( state => state.recipe );
     
 
-    const stepsInstructions = recipe.analyzedInstructions[0].steps;
+    const stepsInstructions = recipe?.analyzedInstructions[0].steps;
     
-    const paragraphInstructions = recipe.instructions;
+    const paragraphInstructions = recipe?.instructions;
     
     let instructions = "";
 
