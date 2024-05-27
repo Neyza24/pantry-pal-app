@@ -14,7 +14,7 @@ export const Loader = () => {
                 </div>
                 <div className="shadow"></div>
             </div>
-            <h3>Cooking your recipes</h3>
+            <h3>Cooking...</h3>
         </Box>
     )
 }
