@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Box, Typography } from "@mui/material";
 
 export const IngredientsRecipe = () => {
+    
     const {recipe} = useSelector( state => state.recipe );
     const stepsInstructions = recipe.extendedIngredients;
 
@@ -30,3 +31,5 @@ export const IngredientsRecipe = () => {
 
     )
 }
+
+/* eslint react/prop-types: 0 */

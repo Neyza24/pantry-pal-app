@@ -218,16 +218,3 @@
     }
 }
 
-
-
-
-
-@media screen and (min-width: 600px) and (max-width: 767px) {
-    .ingredients__container {
-        flex-basis: 100%;
-    }
-
-    .ingredients-selected__container {
-        flex-basis: 100%;
-    }
-}

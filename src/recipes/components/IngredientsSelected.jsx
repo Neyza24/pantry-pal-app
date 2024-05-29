@@ -6,14 +6,12 @@ import { Button, CardMedia, Box, Typography, } from '@mui/material';
 import illustration from '../../assets/happy-girl.png';
 
 
-
 export const IngredientsSelected = () => {
     const dispatch = useDispatch();
 
     const ingredientselected = useSelector(state => state.selectedIngredients);
     const numSelected = ingredientselected.length;
 
-    console.log(ingredientselected);
     const query = ingredientselected.map((ingredient) => ingredient.name).join(',');
 
     const onSubmit = () => {

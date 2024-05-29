@@ -1,5 +1,4 @@
 
-
 import { Card, } from '@mui/material';
 
 export const InfoIconCard = ({children}) => {

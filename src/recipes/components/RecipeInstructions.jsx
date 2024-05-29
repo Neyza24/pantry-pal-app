@@ -10,20 +10,19 @@ export const RecipeInstructions = () => {
     const stepsInstructions = recipe?.analyzedInstructions[0].steps;
     
     const paragraphInstructions = recipe?.instructions;
-    
-    let instructions = "";
 
+    let instructions = "";
+    
     if (stepsInstructions) {
         instructions = (
             <ul>
                 {
-                    stepsInstructions?.map(
-                        item =>
-                            <li key={item.number}
+                    stepsInstructions?.map(item =>
+                            (<li key={item.number}
                                 style={{ listStyle: 'none', paddingBottom: '12px' }}
                             >
                                 {item.number} {item.step}
-                            </li>
+                            </li>)
                     )
                 }
             </ul>

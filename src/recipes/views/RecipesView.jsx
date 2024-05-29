@@ -6,6 +6,8 @@ import { Buttons } from '../components/Buttons';
 
 
 export const RecipesView = () => {
+
+
     return (
         <Box 
             maxWidth="lg" 
@@ -21,8 +23,10 @@ export const RecipesView = () => {
                 <Typography variant="h2" sx={{ pb: '2rem', fontSize: { xs: '1.75rem', md: '2rem' }, textAlign: 'center' }}>
                 <span className="span">7 Sugested</span> recipes for your week!
                 </Typography>
-                <RecipesList />
+                <RecipesList/>
                 <Buttons />
             </Box>
     )
 }
+
+/* eslint react/prop-types: 0 */

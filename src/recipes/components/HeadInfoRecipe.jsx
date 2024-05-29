@@ -7,9 +7,8 @@ export const HeadInfoRecipe = () => {
 
     const {recipe} = useSelector( state => state.recipe );
     
-
     const titleRecipe = recipe.title;
-    const imgRecipe = recipe.image
+    const imgRecipe = recipe.image;
 
     return (
         <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>

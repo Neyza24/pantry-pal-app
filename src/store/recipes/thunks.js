@@ -7,7 +7,7 @@ const API_URL = 'https://api.spoonacular.com/';
 
 //recipes by ingredientes:
 const RECIPES_PATH = 'recipes/findByIngredients';
-const RECIPES_BY_INGREDIENTS_FILTER = 'ingredients=#QUERY&number=7&limitLicense=true&ranking=1&ignorePantry=false';
+const RECIPES_BY_INGREDIENTS_FILTER = 'ingredients=#QUERY&number=14&limitLicense=true&ranking=1&ignorePantry=false';
 
 //recipe by ID:
 const RECIPE_PATH_BY_ID = 'recipes/716429/information?includeNutrition=false';
