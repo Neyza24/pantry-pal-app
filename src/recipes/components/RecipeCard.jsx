@@ -9,7 +9,6 @@ export const RecipeCard = ({ recipe }) => {
     const dispatch = useDispatch();
 
     const id = recipe.id;
-    // console.log(id);
 
     const onViewMore = () => {
         dispatch(fetchRecipeById(id))
@@ -22,7 +21,6 @@ export const RecipeCard = ({ recipe }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 height: '21.5rem',
-                // width: {xs: '19rem', sm: '16rem', lg: '16rem'}, 
                 position: 'relative',
                 borderRadius: "0.725rem",
             }}

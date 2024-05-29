@@ -4,10 +4,10 @@ import { RecipeCard } from "./RecipeCard";
 import { Box } from "@mui/material";
 
 
+
 export const RecipesList = () => {
 
-    const { recipes } = useSelector(state => state.recipes);
-    // console.log(recipes);
+    const { currentRecipes } = useSelector(state => state.recipes);
     
     return (
         <Box sx={{
@@ -16,15 +16,14 @@ export const RecipesList = () => {
                 gap: '1rem',
                 }}
         >
-            
             {
-                recipes && recipes.map(recipe => (
+                currentRecipes && currentRecipes.map(recipe => (
                     <RecipeCard key={recipe.title} recipe={recipe} />
                 ))
             }
-
         </Box>
 
     )
 }
 
+/* eslint react/prop-types: 0 */

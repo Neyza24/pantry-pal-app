@@ -4,7 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 export const initialState = {
     loading: false,
     hasError: false,
-    recipes: []
+    recipes: [],
+    currentRecipes: []
 }
 
 export const recipesSlice = createSlice({
@@ -17,11 +18,15 @@ export const recipesSlice = createSlice({
         getRecipesSuccess: (state, action) => {
             state.loading = false;
             state.recipes = action.payload;
+            state.currentRecipes = action.payload.slice(0,7);
         },
         getRecipesError: (state) => {
             state.hasError = true;
+        },
+        showCurrentRecipes: (state) => {
+            state.currentRecipes = state.recipes.slice(7,14);
         }
     }
 });
 
-export const { getRecipes, getRecipesSuccess, getRecipesError } = recipesSlice.actions;
+export const { getRecipes, getRecipesSuccess, getRecipesError, showCurrentRecipes } = recipesSlice.actions;
