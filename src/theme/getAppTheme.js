@@ -308,8 +308,9 @@ export function getAppTheme(mode) {
               border: "none",
               color: "#323232",
               transition: "transform 50ms",
+              fontSize: '14px',
               "&:hover": {
-                backgroundColor: '#f3fbfb',
+                backgroundColor: brand[100],
                 transition: "translate(0.125rem, 0.125rem)",
 
               },

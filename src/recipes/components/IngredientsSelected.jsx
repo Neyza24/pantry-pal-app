@@ -4,6 +4,7 @@ import { fetchRecipes } from "../../store/recipes/thunks";
 import { SelectedIngredients } from './SelectedIngredients';
 import { Button, CardMedia, Box, Typography, } from '@mui/material';
 import illustration from '../../assets/happy-girl.png';
+import { removeAllIngredients } from '../../store/ingredients/selectedIngredients';
 
 
 export const IngredientsSelected = () => {
@@ -16,6 +17,10 @@ export const IngredientsSelected = () => {
 
     const onSubmit = () => {
         dispatch(fetchRecipes(query));
+    }
+
+    const onRemoveAllSelectedIngredient = () => {
+        dispatch(removeAllIngredients());
     }
 
     return (
@@ -40,13 +45,17 @@ export const IngredientsSelected = () => {
                 {numSelected} Selected ingredients
             </Typography>
 
-            <Box sx={{ display: 'block', width: '6.5rem', margin: 'auto' }}>
-                <CardMedia
-                    component="img"
-                    image={illustration}
-                    alt=''
-                    sx={[{ width: '100%' }, numSelected >= 2 && { display: 'none' }]}
-                />
+            <Box
+                sx={{ display: "block", width: "fit-content", margin: "auto" }}
+            >
+                {
+                    numSelected < 2 && <CardMedia
+                        component="img"
+                        image={illustration}
+                        alt=""
+                        sx={{ width: "6.5rem" }}
+                    />
+                }
             </Box>
 
             {
@@ -60,6 +69,8 @@ export const IngredientsSelected = () => {
                 {numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}
             </Typography>
 
+            
+
             <Button
                 onClick={onSubmit}
                 variant="contained"
@@ -70,6 +81,18 @@ export const IngredientsSelected = () => {
             >
                 Generate Recipes
             </Button>
+
+            {
+                numSelected >= 2 && (
+                    <Button
+                        onClick={onRemoveAllSelectedIngredient}
+                        variant='text'
+                        size="large"
+                    >
+                        Clear all ingredients
+                    </Button>
+                )
+            }
         </Box>
     )
 }
