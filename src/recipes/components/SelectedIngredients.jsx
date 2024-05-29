@@ -13,7 +13,7 @@ export const SelectedIngredients = ({ ingredientselected }) => {
 
     return (
 
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, pb: '2rem' }}>
             <List dense={true}>
                 {
                     ingredientselected.map(ingredient =>
