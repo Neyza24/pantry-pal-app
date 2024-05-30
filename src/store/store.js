@@ -5,7 +5,7 @@ import { allIngredientsSlice } from "./ingredients/allIngredientsSlice";
 import { searchTermSlice } from "./ingredients/searchTerm";
 import { categorySlice } from "./ingredients/categorySlice";
 import { recipeByIdSlice } from "./recipes/recipeById";
-
+import { themeSlice } from "./theme/themeSlice";
 
 
 
@@ -16,7 +16,8 @@ export const store = configureStore({
         allIngredients: allIngredientsSlice.reducer,
         selectedIngredients: selectedIngredientsSlice.reducer,
         category: categorySlice.reducer,
-        recipe: recipeByIdSlice.reducer
+        recipe: recipeByIdSlice.reducer,
+        theme: themeSlice.reducer,
     },
     
 })

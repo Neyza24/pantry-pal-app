@@ -1,7 +1,8 @@
 
 
 import { AppRouter } from "./router/AppRouter"
-import { AppTheme } from "./theme"
+import { AppTheme } from "./store/theme/AppTheme"
+
 
 export const PantryApp = () => {
 
