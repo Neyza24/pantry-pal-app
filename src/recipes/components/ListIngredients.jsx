@@ -21,7 +21,7 @@ export const ListIngredients = () => {
 
     useEffect(() => {
         dispatch(setSelectCategory('All ingredients'));
-    }, [dispatch])
+    }, [dispatch]);
 
     return (
         <Box

@@ -6,7 +6,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export const Footer = () => {
     return (
-        <Box sx={{ backgroundColor: '#323232', display: 'block' }}>
+        <Box sx={{ backgroundColor: '#1D221B', display: 'block' }}>
             <Box
                 maxWidth="1440px"
                 sx={{

@@ -17,6 +17,7 @@ export const RecipeCard = ({ recipe }) => {
     return (
 
         <Card
+            variant="outlined"
             sx={{ 
                 display: 'flex',
                 flexDirection: 'column',
@@ -35,6 +36,7 @@ export const RecipeCard = ({ recipe }) => {
             >
                 <CardMedia
                     component='img'
+                    loading="lazy"
                     src={`${recipe.image}?fit=crop&auto=format`}
                     sx={{
                         position: 'absolute',

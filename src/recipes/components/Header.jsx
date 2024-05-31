@@ -1,12 +1,12 @@
-// import { useEffect, useState } from "react";
-import { Box, Toolbar, Typography } from "@mui/material"
 import { ToggleColorMode } from "./ToggleColorMode";
+import { Box, Toolbar, Typography } from "@mui/material"
+
 
 
 export const Header = () => {
 
     return (
-        <Box  >
+        <Box >
             <Box maxWidth="1440px" sx={{ margin: 'auto' }}>
                 <Toolbar
                     sx={{
@@ -26,7 +26,6 @@ export const Header = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.08rem',
-                            
                         }}
                     >
                         PantryPal

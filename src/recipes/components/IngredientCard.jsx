@@ -27,7 +27,7 @@ export const IngredientCard = ({ isIngredientInList, ingredient }) => {
                             display: 'flex', flexDirection: 'column', gap: '0px',
                             alignItems: 'center', textAlign: 'center',
                         },
-                        isIngredientInList && { backgroundColor: '#f3fbfb', boxShadow: '#56c195 0.25rem 0.25rem 0 0, #323232 0.25rem 0.25rem 0 0.063rem' }
+                        isIngredientInList && { backgroundColor: '#ECF8F330', boxShadow: '#56c195 0.25rem 0.25rem 0 0, #323232 0.25rem 0.25rem 0 0.063rem' }
                     ]}
                 >
                     <CardMedia

@@ -3,14 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    
 }
 
 .chipContainer {
     overflow: auto;
     white-space: nowrap;
     scroll-behavior: smooth;
-    
 }
 
 .chipContainer::-webkit-scrollbar {
@@ -22,12 +20,18 @@
 }
 
 
-.searchContainer{
-    border: 0.0625rem solid #121212;
+.searchContainer__light{
+    border: 0.0625rem solid #323232;
     border-radius: 0.5rem;
-    box-shadow: 0.1rem 0.25rem #121212;
+    box-shadow: 0.1rem 0.25rem #323232;
 }
 
+.searchContainer__dark{
+    background-color: #30392D;
+    border: 0.0625rem solid #5C5C5C;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.25rem #5C5C5C;
+}
 
 .retro {
     font-family: monospace;

@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router-dom';
 import { fetchRecipes } from "../../store/recipes/thunks";
 import { SelectedIngredients } from './SelectedIngredients';
-import { Button, CardMedia, Box, Typography, } from '@mui/material';
-import illustration from '../../assets/happy-girl.png';
 import { removeAllIngredients } from '../../store/ingredients/selectedIngredients';
+import { Button, CardMedia, Box, Typography, Card} from '@mui/material';
+import illustration from '../../assets/happy-girl.png';
+
 
 
 export const IngredientsSelected = () => {
@@ -24,7 +25,8 @@ export const IngredientsSelected = () => {
     }
 
     return (
-        <Box
+        <Card
+            variant="outlined"
             sx={{
                 height: '100%',
                 minWidth: '15rem',
@@ -36,7 +38,6 @@ export const IngredientsSelected = () => {
                 border: '0.125rem solid #323232',
                 borderRadius: '0.625rem',
                 padding: '1.5rem',
-                background: '#fff',
                 gap: '1rem',
                 flexBasis: { xs: '100%', sm: '45%', md: '40%', lg: '35%' },
             }}
@@ -69,8 +70,6 @@ export const IngredientsSelected = () => {
                 {numSelected == 0 ? 'Select ingredients' : 'Select at least 2 ingredients'}
             </Typography>
 
-            
-
             <Button
                 onClick={onSubmit}
                 variant="contained"
@@ -93,7 +92,7 @@ export const IngredientsSelected = () => {
                     </Button>
                 )
             }
-        </Box>
+        </Card>
     )
 }
 

@@ -10,6 +10,7 @@ export const SearchBar = () => {
     const [isValid, setIsValid] = useState(false);
 
     const dispatch = useDispatch();
+    const {mode} = useSelector(state => state.theme);
     const searchValue = useSelector(state => state.searchTerm.term);
 
     const count = searchValue.length >= 1 ? 'clear' : 'search';
@@ -38,7 +39,7 @@ export const SearchBar = () => {
     return (
         <Box sx={{ maxWidth: '45rem', margin: 'auto' }}>
             <Box
-                className='searchContainer'
+                className={`${mode === 'dark' ? 'searchContainer__dark' : 'searchContainer__light'}`}
                 component="form"
                 sx={{
                     display: "flex",
@@ -64,15 +65,15 @@ export const SearchBar = () => {
 
                 <Button
                     variant='contained'
-                    sx={{ borderRadius: '0 0.5rem 0.5rem 0', height: '48px', width: '85px' }}
+                    sx={{ borderRadius: '0 0.5rem 0.5rem 0', height: '48px', width: '85px', }}
                     aria-label="search"
-                    onClick={onClearTerm}>
+                    onClick={onClearTerm}
+                    >
                     {count}
                 </Button>
             </Box>
             {isValid && <Alert
                 severity='error'
-
                 icon={false}
                 sx={{
                     mt: 1.5,
