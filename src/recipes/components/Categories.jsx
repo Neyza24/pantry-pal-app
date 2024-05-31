@@ -18,7 +18,6 @@ export const Categories = () => {
         <div className="chipContainer" >
             {
                 categories.map((category, index) => {
-
                     return (
                         <Chip
                             onClick={() => handleClick(category)}
