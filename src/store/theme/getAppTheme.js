@@ -232,7 +232,6 @@ export function getAppTheme(mode) {
             boxShadow: "none",
             borderRadius: "0.625rem",
             textTransform: "uppercase",
-
             ...(ownerState.variant === "filled" && {
               backgroundColor: "#fff",
               border: `0.125rem solid  ${gray[500]}`,
@@ -264,6 +263,10 @@ export function getAppTheme(mode) {
             boxShadow: "none",
             borderRadius: "0.625rem",
             textTransform: "capitalize",
+            transition: "transform 50ms, box-shadow 50ms",
+            "&:hover": {
+              transition: "translate(0.125rem, 0.125rem)",
+            },
             ...(ownerState.size === "small" && {
               maxHeight: "32px",
             }),
@@ -278,16 +281,12 @@ export function getAppTheme(mode) {
               border: `0.125rem solid  ${gray[500]}`,
               padding: "0.75rem 1rem",
               boxShadow: `0.25rem 0.25rem  ${gray[500]}`,
-              transition: "transform 50ms, box-shadow 50ms",
               "&:hover": {
                 backgroundColor: brand[400],
-                borderWidth: "0.125rem",
-                transition: "translate(0.125rem, 0.125rem)",
-                boxShadow: "0.125rem 0.12rem #323232",
+                boxShadow: `0.125rem 0.125rem  ${gray[500]}`,
               },
               "&:active": {
-                transition: "translate(0.125rem, 0.125rem)",
-                boxShadow: "0.125rem 0.12rem #323232",
+                boxShadow: `0.125rem 0.125rem  ${gray[500]}`,
               },
               "&:disabled": {
                 backgroundColor: brand[200],
@@ -295,50 +294,30 @@ export function getAppTheme(mode) {
               },
             }),
             ...(ownerState.variant === "outlined" && {
-              color: '#323232',
+              color: gray[500],
               backgroundColor: brand[50],
               border: `0.125rem solid  ${gray[500]}`,
               padding: "0.75rem 1rem",
-              boxShadow: "0.25rem 0.25rem #323232",
-              transition: "transform .15s",
+              boxShadow: `0.25rem 0.25rem  ${gray[500]}`,
               "&:hover": {
-                backgroundColor: brand[100],
                 border: `0.125rem solid  ${gray[500]}`,
-                transition: "translate(0.125rem, 0.125rem)",
-                boxShadow: "0.125rem 0.12rem #323232",
-              },
-              "&:active": {
-                transition: "translate(0.125rem, 0.125rem)",
-                boxShadow: "0.125rem 0.12rem #323232",
+                backgroundColor: brand[100],
+                boxShadow: `0.125rem 0.125rem  ${gray[500]}`,
               },
             }),
             ...(ownerState.variant === "outlined" && ownerState.size === "medium" && {
-              color: '#323232',
-              backgroundColor: brand[50],
-              border: `0.125rem solid  ${gray[500]}`,
-              padding: "0.75rem 1rem",
-              boxShadow: "0.125rem 0.125rem #323232",
-              transition: "transform .15s",
+              boxShadow: `0.125rem 0.125rem  ${gray[500]}`,
               "&:hover": {
-                backgroundColor: brand[100],
                 border: `0.125rem solid  ${gray[500]}`,
-                transition: "translate(0.125rem, 0.125rem)",
-                boxShadow: "0.063rem 0.06rem #323232",
-              },
-              "&:active": {
-                transition: "translate(0.125rem, 0.125rem)",
-                boxShadow: "0.125rem 0.12rem #323232",
+                boxShadow: `0.063rem 0.063rem  ${gray[500]}`,
               },
             }),
             ...(ownerState.variant === "text" && {
               border: "none",
-              color: "#323232",
-              transition: "transform 50ms",
+              color: gray[500],
               fontSize: '14px',
               "&:hover": {
                 backgroundColor: brand[100],
-                transition: "translate(0.125rem, 0.125rem)",
-
               },
             }),
             ...(theme.palette.mode === "dark" && {
@@ -346,27 +325,30 @@ export function getAppTheme(mode) {
               {
                 color: gray[700],
                 borderColor: brand[50],
-                boxShadow: `0.25rem 0.25rem  ${gray[400]}`,
                 backgroundColor: brand[500],
+                boxShadow: `0.25rem 0.25rem  ${gray[400]}`,
                 "&:hover": {
                   backgroundColor: brand[600],
                   boxShadow: `0.125rem 0.125rem  ${gray[400]}`,
                 },
-                
+
               }),
-              ...(ownerState.variant === "outlined" && {
-                backgroundColor: "white",
-                border: `0.125rem solid  ${gray[500]}`,
-                padding: "0.75rem 1rem",
-                boxShadow: "0.25rem 0.25rem #323232",
-                transition: "transform 50ms, box-shadow 50ms",
+              ...(ownerState.variant === "outlined" && ownerState.size === "large" && {
+                backgroundColor: "#fff",
+                boxShadow: `0.25rem 0.25rem  ${gray[400]}`,
                 "&:hover": {
-                  backgroundColor: alpha(brand[600], 0.3),
-                  borderColor: brand[700],
+                  backgroundColor: gray[100],
+                  borderColor: gray[700],
+                  boxShadow: `0.125rem 0.125rem  ${gray[400]}`,
                 },
-                "&:active": {
-                  transition: "translate(0.125rem, 0.125rem)",
-                  boxShadow: "0.125rem 0.12rem #323232",
+              }),
+              ...(ownerState.variant === "outlined" && ownerState.size === "medium" && {
+                backgroundColor: "#fff",
+                boxShadow: `0.125rem 0.125rem  ${gray[400]}`,
+                "&:hover": {
+                  backgroundColor: gray[100],
+                  borderColor: gray[700],
+                  boxShadow: `0.063rem 0.063rem  ${gray[400]}`,
                 },
               }),
               ...(ownerState.variant === "text" && {
@@ -387,7 +369,6 @@ export function getAppTheme(mode) {
             borderRadius: "0.625rem",
             border: `0.125rem solid  ${gray[500]}`,
             ...(ownerState.variant !== "outlined" && {
-
               transition: "transform 25ms, box-shadow 25ms",
               "&:hover": {
                 backgroundColor: secondary[50],
@@ -402,7 +383,7 @@ export function getAppTheme(mode) {
               }),
               ...(ownerState.variant !== "outlined" && {
                 backgroundColor: bgPaper[500],
-                
+
                 borderColor: alpha(gray[400], 0.5),
                 "&:hover": {
                   backgroundColor: alpha(secondary[50], 0.2),

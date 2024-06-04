@@ -1,3 +1,10 @@
+:root {
+    --gray-500: #323232;
+    --secondary-300: #9ADABF;
+    --secondary-500: #56C195;
+    --brand-500: #FFD850;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -21,9 +28,9 @@
 
 
 .searchContainer__light{
-    border: 0.0625rem solid #323232;
+    border: 0.0625rem solid var(--gray-500);
     border-radius: 0.5rem;
-    box-shadow: 0.1rem 0.25rem #323232;
+    box-shadow: 0.1rem 0.25rem var(--gray-500);
 }
 
 .searchContainer__dark{
@@ -36,7 +43,6 @@
 .retro {
     font-family: monospace;
     font-weight: 700;
-
     background-color: white;
     padding: 0.75rem 1rem;
     border-radius: 0.25rem;
@@ -58,7 +64,7 @@
 }
 
 .span:before {
-    background: #9ADABF;
+    background: var(--secondary-300);
     border-radius: 0.5rem;
     content: "";
     height: 95%;
@@ -180,7 +186,7 @@
         width: 60%;
         height: 45%;
         border: 0.625rem solid transparent;
-        border-bottom: 0.625rem solid #FFD850;
+        border-bottom: 0.625rem solid var(--brand-500);
         border-radius: 50%;
         animation: loader 1s infinite;
         animation-timing-function: linear;
@@ -195,7 +201,7 @@
     .pan {
         width: 60%;
         height: 1.25rem;
-        background: linear-gradient(#56C195, #9ADABF);
+        background: linear-gradient(var(--secondary-500), var(--secondary-300));
         border-bottom-right-radius: 1.25rem;
         border-bottom-left-radius: 1.25rem;
     }
@@ -203,7 +209,7 @@
     .handle {
         width: 40%;
         height: 0.625rem;
-        background: linear-gradient(#56C195, #9ADABF);
+        background: linear-gradient(var(--secondary-500), var(--secondary-300));
         border-top-right-radius: 0.625rem;
         border-top-left-radius: 0.625rem;
         border-bottom-right-radius: 0.625rem;
