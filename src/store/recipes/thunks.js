@@ -43,7 +43,7 @@ export function fetchRecipeById(id) {
         try{
             const response = await fetch(url);
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
             dispatch(getRecipeByIdSuccess(data));
         } catch (error) {
             dispatch(getRecipeByIdError());

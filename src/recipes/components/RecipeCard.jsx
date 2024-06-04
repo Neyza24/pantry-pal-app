@@ -1,7 +1,7 @@
 
 import { Box, Card, CardContent, CardMedia, Button, Typography, CardActions } from "@mui/material";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import {Link as RouterLink} from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { fetchRecipeById } from "../../store/recipes/thunks";
 
@@ -18,7 +18,7 @@ export const RecipeCard = ({ recipe }) => {
 
         <Card
             variant="outlined"
-            sx={{ 
+            sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 height: '21.5rem',
@@ -43,7 +43,7 @@ export const RecipeCard = ({ recipe }) => {
                         aspectRatio: '16/15',
                         objectFit: 'cover',
                         bottom: '16px',
-                        
+
                     }}
                 />
             </Box>
@@ -57,25 +57,25 @@ export const RecipeCard = ({ recipe }) => {
                 >
                     {recipe.title}
                 </Typography>
-                
-                    <Typography variant="subtitle2" sx={{ fontZise: { xs: '14px' }, pt: '8px' }}>
-                        {recipe?.missedIngredientCount} missed ingredients
-                    </Typography>
-                
+
+                <Typography variant="subtitle2" color="text.secondary" sx={{ fontZise: { xs: '14px' }, pt: '8px' }}>
+                    {recipe?.missedIngredientCount} extra ingredients
+                </Typography>
+
             </CardContent>
             <CardActions sx={{ p: '0px 16px 20px', position: 'absolute', bottom: '0', width: '100%', }}>
-                <Button 
-                    size="medium" 
-                    variant="outlined" 
+                <Button
+                    size="medium"
+                    variant="outlined"
                     fullWidth
                     to={`/recipes/${id}`}
                     component={RouterLink}
                     onClick={onViewMore}
                 >
-                    View details 
-                    <ArrowRightAltIcon sx={{textAlign: 'end', paddingLeft: '4px'}} />
+                    View details
+                    <ArrowRightAltIcon sx={{ textAlign: 'end', paddingLeft: '4px' }} />
                 </Button>
-                
+
             </CardActions>
         </Card>
     )
