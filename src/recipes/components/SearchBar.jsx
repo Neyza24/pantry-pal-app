@@ -10,7 +10,7 @@ export const SearchBar = () => {
     const [isValid, setIsValid] = useState(false);
 
     const dispatch = useDispatch();
-    const {mode} = useSelector(state => state.theme);
+    const { mode } = useSelector(state => state.theme);
     const searchValue = useSelector(state => state.searchTerm.term);
 
     const count = searchValue.length >= 1 ? 'clear' : 'search';
@@ -68,21 +68,18 @@ export const SearchBar = () => {
                     sx={{ borderRadius: '0 0.5rem 0.5rem 0', height: '48px', width: '85px', }}
                     aria-label="search"
                     onClick={onClearTerm}
-                    >
+                >
                     {count}
                 </Button>
+
             </Box>
             {isValid && <Alert
+                variant="outlined"
                 severity='error'
                 icon={false}
                 sx={{
                     mt: 1.5,
-                    color: '#634e26',
-                    boxShadow: 'none',
-                    borderColor: '#F79782',
-                    borderWidth: '1px',
                     py: 0,
-                    fontSize: '12px'
                 }}
             >
                 You cannot search for ingredients with numbers or special characters
