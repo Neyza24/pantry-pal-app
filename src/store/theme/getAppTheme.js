@@ -393,6 +393,33 @@ export function getAppTheme(mode) {
           }),
         },
       },
+      MuiAlert: {
+        styleOverrides: {
+          root: ({ theme, ownerState }) => ({
+            ...(ownerState.variant === "outlined" && ownerState.severity === "error" && {
+              color: gray[500],
+              borderColor: gray[500],
+              borderWidth: '0.063rem',
+              fontSize: '12px',
+              backgroundColor: brand[100],
+              boxShadow: 'none',
+              "&:hover": {
+                backgroundColor: "transparent",
+              },
+            }),
+
+            ...(theme.palette.mode === "dark" && {
+              ...(ownerState.variant === "outlined" && {
+                color: gray[100],
+                borderColor: gray[400],
+                backgroundColor: "transparent",
+
+              }),
+          
+              }),
+          }),
+        },
+      },
     },
   };
 }
