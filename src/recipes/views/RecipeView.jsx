@@ -22,6 +22,7 @@ export const RecipeView = () => {
                 margin: 'auto',
                 gap: '32px'
             }}
+            className="animate__animated animate__fadeIn animate__slow"
         >
             <HeadInfoRecipe />
             <IngredientsRecipe />

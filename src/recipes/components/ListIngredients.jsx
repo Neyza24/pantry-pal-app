@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilteredAllIngredients } from '../../store/ingredients/allIngredientsSlice';
-import { setSelectCategory } from '../../store/ingredients/categorySlice';
+import { selectCategory, setSelectCategory } from '../../store/ingredients/categorySlice';
 import { IngredientCard } from './IngredientCard';
 import { Box } from '@mui/material';
 
@@ -12,6 +12,7 @@ export const ListIngredients = () => {
     const dispatch = useDispatch();
 
     const allIngredients = useSelector(selectFilteredAllIngredients);
+    const category = useSelector(selectCategory);
     const ingredientselected = useSelector(state => state.selectedIngredients);
 
 
@@ -20,8 +21,8 @@ export const ListIngredients = () => {
     }
 
     useEffect(() => {
-        dispatch(setSelectCategory('All ingredients'));
-    }, [dispatch]);
+        dispatch(setSelectCategory(category));
+    }, [dispatch, category]);
 
     return (
         <Box

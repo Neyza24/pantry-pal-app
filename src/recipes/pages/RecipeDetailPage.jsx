@@ -13,9 +13,7 @@ export const RecipeDetailPage = () => {
             {
                 loading ? <LoaderView /> : <RecipeView />
             }
-            
         </AppLayout>
-        
     )
 }
 

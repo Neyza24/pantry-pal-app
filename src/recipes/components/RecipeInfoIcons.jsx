@@ -9,27 +9,22 @@ import { useSelector } from 'react-redux';
 
 
 export const RecipeInfoIcons = () => {
-    const {recipe} = useSelector( state => state.recipe );
-
-    const time = recipe.readyInMinutes;
-    const numberServings = recipe.servings;
-    const likes = recipe.aggregateLikes;
-    const health = recipe.healthScore;
+    const {readyInMinutes, servings, aggregateLikes, healthScore} = useSelector( state => state.recipe.recipe );
 
     return (
         <Box >
             <Box sx={{ display: 'flex', gap: '0px', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <InfoIconCard>
-                    <SoupKitchenOutlinedIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{numberServings} Servings</p> 
+                    <SoupKitchenOutlinedIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{servings} Servings</p> 
                 </InfoIconCard>
                 <InfoIconCard>
-                    <AccessTimeIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{time} Minutes</p>
+                    <AccessTimeIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{readyInMinutes} Minutes</p>
                 </InfoIconCard>
                 <InfoIconCard>
-                    <FavoriteBorderIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{likes} Likes</p>
+                    <FavoriteBorderIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{aggregateLikes} Likes</p>
                 </InfoIconCard>
                 <InfoIconCard>
-                    <EnergySavingsLeafOutlinedIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{health}% Healtys</p>
+                    <EnergySavingsLeafOutlinedIcon fontSize='medium' sx={{}} /><p style={{fontSize: '14px'}}>{healthScore}% Healtys</p>
                 </InfoIconCard>
             </Box>
         </Box>

@@ -19,6 +19,7 @@ export const RecipesView = () => {
                 px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, 
                 margin: 'auto' 
             }}
+            className="animate__animated animate__fadeIn animate__slow"
         >
                 <Typography variant="h2" sx={{ pb: '2rem', fontSize: { xs: '1.75rem', md: '2rem' }, textAlign: 'center' }}>
                 <span className="span">7 Sugested</span> recipes for your week!
