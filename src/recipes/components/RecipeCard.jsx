@@ -1,9 +1,10 @@
-
+import { useDispatch } from "react-redux";
+import { Link as RouterLink } from 'react-router-dom';
+import { fetchRecipeById } from "../../store/recipes/thunks";
+import defaultImg from '../../assets/img-cat.png';
 import { Box, Card, CardContent, CardMedia, Button, Typography, CardActions } from "@mui/material";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { Link as RouterLink } from 'react-router-dom';
-import { useDispatch } from "react-redux";
-import { fetchRecipeById } from "../../store/recipes/thunks";
+
 
 export const RecipeCard = ({ recipe }) => {
     const dispatch = useDispatch();
@@ -37,7 +38,7 @@ export const RecipeCard = ({ recipe }) => {
                 <CardMedia
                     component='img'
                     loading="lazy"
-                    src={`${recipe.image}?fit=crop&auto=format`}
+                    src={`${recipe.image ? recipe.image : defaultImg}?fit=crop&auto=format`}
                     sx={{
                         position: 'absolute',
                         aspectRatio: '16/15',
@@ -68,7 +69,7 @@ export const RecipeCard = ({ recipe }) => {
                     size="medium"
                     variant="outlined"
                     fullWidth
-                    to={`/recipes/${id}`}
+                    to={`/recipes/${id}/recipe`}
                     component={RouterLink}
                     onClick={onViewMore}
                 >

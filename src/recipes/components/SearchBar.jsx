@@ -49,7 +49,9 @@ export const SearchBar = () => {
                     py: 0,
                 }}
             >
-                <SearchIcon fontSize="small" />
+                <Box sx={{ display: { xs: 'none', sm: 'inline-flex' } }}>
+                    <SearchIcon fontSize="small" />
+                </Box>
 
                 <InputBase
                     sx={{
@@ -81,6 +83,7 @@ export const SearchBar = () => {
                     mt: 1.5,
                     py: 0,
                 }}
+                className="animate__animated animate__fadeIn animate__slow"
             >
                 You cannot search for ingredients with numbers or special characters
             </Alert>

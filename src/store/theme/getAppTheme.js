@@ -232,6 +232,7 @@ export function getAppTheme(mode) {
             boxShadow: "none",
             borderRadius: "0.625rem",
             textTransform: "uppercase",
+            transition: "all 0.5s ease-out",
             ...(ownerState.variant === "filled" && {
               backgroundColor: "#fff",
               border: `0.125rem solid  ${gray[500]}`,

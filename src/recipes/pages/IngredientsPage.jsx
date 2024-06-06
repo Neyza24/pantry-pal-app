@@ -10,7 +10,10 @@ export const IngredientsPage = () => {
 
         <AppLayout>
 
-            <Box maxWidth="lg" sx={{ height: 'auto', width: '100%', pt: '3rem', pb: '2.5rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, margin: 'auto' }} >
+            <Box 
+                maxWidth="lg" 
+                sx={{ height: 'auto', width: '100%', pt: '3rem', pb: '2.5rem', px: { xs: '1rem', sm: '1.5rem', md: '2rem' }, margin: 'auto' }} 
+            >
                 <Typography variant="h2" sx={{ pb: '2rem', textAlign: 'center', pt: '0rem' }} >
                     What is in your<span className="span">fridge?</span>
                 </Typography>

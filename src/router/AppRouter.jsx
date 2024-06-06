@@ -9,7 +9,7 @@ export const AppRouter = () => {
         <Routes>
             <Route path='/' element={<IngredientsPage />} />
             <Route path='/recipes' element={<RecipesPage />} />
-            <Route path='/recipes/:id' element={<RecipeDetailPage />} />
+            <Route path='/recipes/:id/recipe' element={<RecipeDetailPage />} />
             <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
     )

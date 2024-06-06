@@ -4,35 +4,33 @@ import { useSelector } from "react-redux";
 
 export const RecipeInstructions = () => {
 
-    const {recipe} = useSelector( state => state.recipe );
-    
+    const { analyzedInstructions, instructions: paragraphInstructions, sourceUrl, sourceName } = useSelector(state => state.recipe.recipe);
 
-    const stepsInstructions = recipe?.analyzedInstructions[0].steps;
-    
-    const paragraphInstructions = recipe?.instructions;
 
-    let instructions = "";
-    
+    const stepsInstructions = analyzedInstructions[0].steps;
+
+    let handleInstructions = "";
+
     if (stepsInstructions) {
-        instructions = (
+        handleInstructions = (
             <ul>
                 {
                     stepsInstructions?.map(item =>
-                            (<li key={item.number}
-                                style={{ listStyle: 'none', paddingBottom: '12px' }}
-                            >
-                                {item.number} {item.step}
-                            </li>)
+                    (<li key={item.number}
+                        style={{ listStyle: 'none', paddingBottom: '12px' }}
+                    >
+                        {item.number} {item.step}
+                    </li>)
                     )
                 }
             </ul>
         );
     } else if (paragraphInstructions) {
-        instructions = (<p>{paragraphInstructions}</p>);
+        handleInstructions = (<p>{paragraphInstructions}</p>);
     } else {
-        instructions = (
-            <p>👩‍🍳👨‍🍳 See step-by-step recipe preparation instructions at 
-                <a href={recipe.sourceUrl} target="_blank">{recipe.sourceName}</a>
+        handleInstructions = (
+            <p>👩‍🍳👨‍🍳 See step-by-step recipe preparation instructions at
+                <a href={sourceUrl} target="_blank">{sourceName}</a>
             </p>
         );
     }
@@ -48,7 +46,7 @@ export const RecipeInstructions = () => {
                 padding: '20px',
             }}>
                 {
-                    instructions
+                    handleInstructions
                 }
             </div>
         </Box>

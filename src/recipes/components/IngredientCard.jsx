@@ -3,7 +3,6 @@ import { addIngredient, removeIngredient } from "../../store/ingredients/selecte
 import { Box, Card, CardActionArea, CardContent, CardMedia, Typography } from "@mui/material"
 
 
-
 export const IngredientCard = ({ isIngredientInList, ingredient }) => {
 
     const dispatch = useDispatch();
@@ -18,7 +17,7 @@ export const IngredientCard = ({ isIngredientInList, ingredient }) => {
 
 
     return (
-        <Box sx={{  }}  >
+        <Box className="animate__animated animate__fadeIn animate__slow">
             <CardActionArea
                 onClick={isIngredientInList ? onRemoveSelectedIngredient : onAddSelectedIngredient} >
                 <Card elevation={0} sx={

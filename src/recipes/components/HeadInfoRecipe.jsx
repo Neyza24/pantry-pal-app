@@ -5,13 +5,10 @@ import { Box, Typography, CardMedia } from "@mui/material"
 
 export const HeadInfoRecipe = () => {
 
-    const {recipe} = useSelector( state => state.recipe );
-    
-    const titleRecipe = recipe.title;
-    const imgRecipe = recipe.image;
+    const { title, image } = useSelector(state => state.recipe.recipe);
 
     return (
-        <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <Typography
                 variant="h2"
                 sx={{
@@ -19,7 +16,7 @@ export const HeadInfoRecipe = () => {
                     pb: '1rem'
                 }}
             >
-                {titleRecipe}
+                {title}
             </Typography>
             <Box sx={{
                 pb: '1rem',
@@ -27,11 +24,11 @@ export const HeadInfoRecipe = () => {
                 width: '100%',
                 height: 'auto',
                 overflow: 'hidden',
-                
+
             }}>
                 <CardMedia
                     component="img"
-                    src={imgRecipe}
+                    src={image}
                     sx={{
                         width: '100%',
                         maxHeight: '280px',
@@ -44,7 +41,7 @@ export const HeadInfoRecipe = () => {
                     borderRadius: "0.625rem",
                     border: "0.125rem solid #323232",
                     padding: '4px',
-                    
+
                 }}>
                 <RecipeInfoIcons />
             </Box>

@@ -18,14 +18,10 @@ export const selectedIngredientsSlice = createSlice({
         removeAllIngredients: (state) => {
             state.length = 0;
         },
-        ingredientToggled: (state, action) => {
-            const { id } = action.payload;
-            const ingredient = state[id]
-            ingredient.isSelected = !ingredient.isSelected
-        },
+        
     }
 }); 
 
-export const { addIngredient, removeIngredient, removeAllIngredients, ingredientToggled } = selectedIngredientsSlice.actions;
+export const { addIngredient, removeIngredient, removeAllIngredients } = selectedIngredientsSlice.actions;
 
 
